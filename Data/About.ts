@@ -33,16 +33,19 @@ const DOMAINS = [
 
 const PILLARS = [
   {
+    id:1,
     title: "Frontier Vision",
     desc: "Research in Language, Vision, Audio, and Multimodal enhances capabilities.",
     wide: true,
   },
   {
+    id:2,
     title: "Research-to-Product",
     desc: "Findings move into reliable, shipped systems.",
     wide: false,
   },
   {
+    id:3,
     title: "Open & Collaborative",
     desc: "Work is shared with the wider research community.",
     wide: false,

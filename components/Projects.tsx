@@ -3,11 +3,14 @@ import { PAPERS } from "@/Data/Project";
 
 export default function Projects() {
   return (
-    <section id="research" className="border-t hairline lg:py-32">
-      <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+    <section id="research" className="py-8 lg:py-28">
+      <div className="mx-auto max-w-[1600px] px-6 lg:px-10">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <span className="eyebrow">Research</span>
+            <div className="flex items-center gap-4">
+              <span className="h-2 w-2 rotate-45 bg-blue-500" />
+              <span>Research</span>
+            </div>
             <h2 className="mt-4 text-balance text-[1.75rem] font-medium leading-tight tracking-tight sm:text-3xl">
               DeepFusion AI&rsquo;s Recent Works
             </h2>

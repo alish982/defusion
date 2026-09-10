@@ -9,25 +9,19 @@ const LINKS = [
   { label: "Research Domains", href: "#domains" },
 ];
 
-function Mark() {
-  return (
-    <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0" aria-hidden="true">
-      <path
-        d="M12 1.5 22.5 12 12 22.5 1.5 12z"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.4"
-      />
-      <path d="M12 7 17 12 12 17 7 12z" fill="currentColor" />
-    </svg>
-  );
-}
-
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-ink/70 backdrop-blur-md">
+    <header
+      className="fixed inset-x-0 top-0 z-50 bg-ink/70 backdrop-blur-md"
+      style={{
+        WebkitMaskImage:
+          "linear-gradient(to bottom, black 10%, black 75%, transparent 100%)",
+        maskImage:
+          "linear-gradient(to bottom, black 10%, black 75%, transparent 100%)",
+      }}
+    >
       <div className="mx-auto flex h-20 max-w-[1650px] items-center justify-between px-6 lg:px-10">
         <a href="#top" className="flex items-center gap-2 text-paper">
           <Image
@@ -35,12 +29,18 @@ export default function Navbar() {
             height={36}
             width={36}
             alt="DeepFusion AI Labs logo"
+            style={{
+              WebkitMaskImage:
+                "linear-gradient(to bottom, black 10%, black 75%, transparent 100%)",
+              maskImage:
+                "linear-gradient(to bottom, black 10%, black 75%, transparent 100%)",
+            }}
           />
           <span className="flex flex-col leading-tight">
             <span className="text-[24px] font-medium tracking-tight">
-              DeepFusion
+              DEEPFUSION
             </span>
-            <span className="text-[11px] text-[#FFFFFF] font-medium tracking-wide">
+            <span className="text-[12px] text-[#FFFFFF] font-normal -mt-1">
               AI LABS
             </span>
           </span>
@@ -61,7 +61,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <a
             href="#contact"
-            className="hidden md:inline-flex h-10 items-center justify-center rounded-full border border-transparent bg-origin-border px-6 text-[13px] font-medium text-paper transition-opacity hover:opacity-85
+            className="hidden md:inline-flex h-10 items-center justify-center rounded-full border border-transparent bg-origin-border px-4 text-[13px] font-medium text-paper transition-opacity hover:opacity-85
             [background-image:radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0)_70%),linear-gradient(#0a0a0c,#0a0a0c),linear-gradient(45deg,#004181_0%,rgba(255,255,255,0.35)_100%)]
             [background-clip:padding-box,padding-box,border-box]"
           >
@@ -110,7 +110,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="mt-1 inline-block w-fit rounded-full bg-paper px-4 py-2 text-[13px] font-medium text-ink"
+              className="mt-1 inline-block w-fit rounded-full bg-paper px-4 py-2 text-[14px] font-medium text-ink"
             >
               Get in touch
             </a>
