@@ -29,7 +29,7 @@ function PillarCard({
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 p-5">
         <div className="border-t hairline pt-4">
-          <p className="text-[15px] font-medium text-white">{title}</p>
+          <p className="text-[28px] font-medium text-white">{title}</p>
           {desc && (
             <p className="mt-1.5 text-[13px] leading-relaxed text-white/60">
               {desc}
