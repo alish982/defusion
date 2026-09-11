@@ -15,7 +15,7 @@ function PillarCard({
 }) {
   return (
     <div
-      className={`relative overflow-hidden rounded-2xl border hairline bg-surface ${className}`}
+      className={`relative overflow-hidden border-r hairline bg-surface ${className}`}
     >
       <div className="absolute inset-0">
         <Image
@@ -27,8 +27,8 @@ function PillarCard({
         />
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 p-5">
-        <div className="border-t hairline pt-4">
+      <div className="absolute inset-x-0 bottom-0">
+        <div className="border-t hairline pt-4 px-2">
           <p className="text-[28px] font-medium text-white">{title}</p>
           {desc && (
             <p className="mt-1.5 text-[13px] leading-relaxed text-white/60">
@@ -73,7 +73,7 @@ export default function WhyDeepFusion() {
       </div>
 
       {/* Desktop: interactive expand-on-click row */}
-      <div className="mt-12 hidden gap-4 lg:flex">
+      <div className="mt-12 hidden lg:flex">
         {PILLARS.map((p) => {
           const isActive = p.id === activeProject;
           return (
