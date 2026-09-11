@@ -11,8 +11,9 @@ export default function Projects() {
               <span className="h-2 w-2 rotate-45 bg-blue-500" />
               <span>Research</span>
             </div>
-            <h2 className="mt-4 text-balance text-[1.75rem] font-medium leading-tight tracking-tight sm:text-3xl">
-              DeepFusion AI&rsquo;s Recent Works
+            <h2 className="mt-4 text-balance text-[1.75rem] font-light leading-tight tracking-tight sm:text-3xl sm:whitespace-nowrap">
+              DeepFusion AI's Recent
+              <br className="sm:hidden" /> Works
             </h2>
           </div>
 

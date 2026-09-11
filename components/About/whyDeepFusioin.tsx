@@ -46,11 +46,11 @@ export default function WhyDeepFusion() {
 
   return (
     <>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 md:mt-12">
         <span className="h-2.5 w-2.5 rotate-45 bg-blue-500" />
         <span>Why DeepFusion</span>
       </div>
-      <h2 className="mt-4 max-w-xl md:whitespace-nowrap text-[1.75rem] font-medium leading-tight tracking-tight sm:text-3xl">
+      <h2 className="mt-4 max-w-xl md:whitespace-nowrap text-[1.62rem] md:text-[2rem] font-light leading-tight tracking-tight sm:text-3xl">
         We Work at the Layer Where Behavior is Decided
       </h2>
       <p className="mt-5 max-w-md text-[16px] text-muted md:whitespace-nowrap">

@@ -20,7 +20,7 @@ export default function ResearchDomains() {
             <span className="h-2 w-2 rotate-45 bg-blue-500" />
             <span>Research Domains</span>
           </div>
-          <h2 className="mx-auto mt-4 text-balance text-[1.75rem] font-medium leading-tight tracking-tight sm:text-3xl">
+          <h2 className="mx-auto my-4 text-balance text-[1.64rem] md:text-[2rem] font-light leading-tight tracking-tight sm:text-3xl whitespace-nowrap">
             DeepFusion AI builds lasting
             <br className="sm:hidden" /> AI capabilities.
           </h2>
