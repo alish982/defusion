@@ -64,7 +64,7 @@ export default function Footer() {
             ))}
           </div>
           <ScrollLink
-            to="#top"
+            to="top"
             className="text-[16px] text-[#FFFFFFB8] font-normal transition-colors hover:text-paper"
           >
             Back to top ↑
