@@ -61,7 +61,7 @@ export default function WhyDeepFusion() {
       <h2 className="mt-4 max-w-xl md:whitespace-nowrap text-[1.62rem] md:text-[2rem] font-normal font-creato leading-tight tracking-tight sm:text-3xl">
         We Work at the Layer Where Behavior is Decided
       </h2>
-      <p className="mt-5 max-w-md text-[16px] text-muted md:whitespace-nowrap">
+      <p className="mt-5 max-w-md text-[14px] md:text-[16px] text-muted">
         It addresses the challenge of taking complex research and deploying it
         as reliable production systems.
       </p>

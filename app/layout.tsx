@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { creatoDisplay } from "./font";
+import Container from "@/components/container";
+import Hero from "@/components/Hero";
+import Footer from "@/components/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,9 +24,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${creatoDisplay.variable}`}>
       <body className="antialiased bg-ink text-paper font-sans">
-        {children}
+        <Hero />
+        <Container>{children}</Container>
+        <Footer />
       </body>
     </html>
   );

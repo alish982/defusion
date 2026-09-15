@@ -13,7 +13,7 @@ export const PAPERS = [
   },
   {
     tag: "Jun 2026 · Vision",
-    title: "Efficient Multimodal Grounding for On-Device Inference",
+    title: "Efficient Multimodal Grounding for On-Device Inference Information",
     desc: "One sentence on what the work found or produced.",
     href: "#",
   },

@@ -12,6 +12,9 @@
   --color-accent: #7c9eff;
   --color-accent-dim: #4d63a8;
 
+  --font-sans: var(--font-sans);
+  --font-creato: var(--font-creato);
+
   --animate-drift: drift 40s linear infinite;
   --animate-pulse-slow: pulse-slow 6s ease-in-out infinite;
 
