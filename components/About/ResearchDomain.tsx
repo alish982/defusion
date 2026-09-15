@@ -31,7 +31,7 @@ export default function ResearchDomains() {
             {DOMAINS.map((d, i) => {
               const isActive = i === active;
               return (
-                <li key={d.n} className="relative border-b border-white/10">
+                <li key={d.n} className="relative border-b border-white/10 pt-8 ">
                   <button
                     type="button"
                     onClick={() => setActive(i)}

@@ -54,7 +54,7 @@ export default function WhyDeepFusion() {
 
   return (
     <>
-      <div className="flex items-center gap-4 md:mt-12">
+      <div className="flex items-center gap-4 mt-6 md:mt-12">
         <span className="h-2.5 w-2.5 rotate-45 bg-blue-500" />
         <span>Why DeepFusion</span>
       </div>
