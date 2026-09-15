@@ -12,17 +12,13 @@ const LINKS = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  // <div className="relative mx-auto w-full py-8 px-6 sm:px-8 md:px-12 lg:px-24 lg:pt-28 xl:pl-32 xl:pt-32">
   return (
-    <header className="md:px-5 lg:px-14 xl:px-28 fixed inset-x-0 top-0 z-50">
-      <div
-        className="
-          bg-ink/90
+    <header className="md:px-5 lg:px-14 xl:px-28 fixed inset-x-0 top-0 z-50 bg-ink/90
           md:bg-ink/70
           backdrop-blur-md
           md:[-webkit-mask-image:linear-gradient(to_bottom,black_10%,black_75%,transparent_100%)]
-          md:[mask-image:linear-gradient(to_bottom,black_10%,black_75%,transparent_100%)]
-  "
+          md:[mask-image:linear-gradient(to_bottom,black_10%,black_75%,transparent_100%)]">
+      <div className=""
       >
         <div className="mx-auto flex h-20 items-center justify-between px-6 lg:px-10">
           <ScrollLink to="#top" className="flex items-center gap-2 text-paper">
@@ -39,7 +35,7 @@ export default function Navbar() {
               }}
             />
             <span className="flex flex-col leading-tight">
-              <span className="text-[24px] font-medium tracking-tight">
+              <span className="md:text-[24px] font-medium tracking-tight">
                 DEEPFUSION
               </span>
               <span className="text-[12px] text-[#FFFFFF] font-normal -mt-1">

@@ -4,53 +4,58 @@ import ScrollLink from "@/utils/ScrollLink";
 
 export default function Footer() {
   return (
-    <footer id="contact">
-      <div className="grid divide-y divide-white/10 lg:h-[422px] border hairline sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-y-0">
-        {COLUMNS.map((col) => (
-          <div key={col.title} className="py-5 md:pt-6 px-8 ">
-            <p className="text-[14px] md:text-[16px] font-medium font-creato text-paper">
-              {col.title}
+    <>
+      <footer id="contact" className="px-5">
+        <div className="grid divide-y divide-white/10 lg:h-[422px] border hairline sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-y-0">
+          {COLUMNS.map((col) => (
+            <div key={col.title} className="py-5 md:pt-6 px-4 ">
+              <p className="text-[14px] md:text-[16px] font-medium font-creato text-paper">
+                {col.title}
+              </p>
+              <ul className="mt-4 space-y-3">
+                {col.links.map((l) => (
+                  <li key={l.label}>
+                    <ScrollLink
+                      to={l.href}
+                      className="text-[#FFFFFFE0] text-[14px] md:text-[15px] font-normal font-creato transition-colors hover:text-paper"
+                    >
+                      {l.label}
+                    </ScrollLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+
+          <div className="px-4 py-5 md:pt-6 pb-16">
+            <p className="text-[14px] md:text-[16px] font-creato font-medium text-paper">
+              Contact
             </p>
-            <ul className="mt-4 space-y-3">
-              {col.links.map((l) => (
-                <li key={l.label}>
-                  <ScrollLink
-                    to={l.href}
-                    className="text-[#FFFFFFE0] text-[14px] md:text-[15px] font-normal font-creato transition-colors hover:text-paper"
-                  >
-                    {l.label}
-                  </ScrollLink>
-                </li>
-              ))}
+            <ul className="mt-4 space-y-4 text-[14px] font-creato md:text-[15px]">
+              <li>
+                <ScrollLink
+                  to="mailto:info@deepfusion.ai"
+                  className="hover:text-paper"
+                >
+                  info@deepfusion.ai
+                </ScrollLink>
+              </li>
+              <li>
+                <ScrollLink
+                  to="tel:+9779701122624"
+                  className="hover:text-paper"
+                >
+                  +977-9701122624
+                </ScrollLink>
+              </li>
+              <li>Kupondole, Lalitpur</li>
             </ul>
           </div>
-        ))}
-
-        <div className="px-8 py-5 md:pt-6 pb-16">
-          <p className="text-[14px] md:text-[16px] font-creato font-medium text-paper">
-            Contact
-          </p>
-          <ul className="mt-4 space-y-4 text-[14px] font-creato md:text-[15px]">
-            <li>
-              <ScrollLink
-                to="mailto:info@deepfusion.ai"
-                className="hover:text-paper"
-              >
-                info@deepfusion.ai
-              </ScrollLink>
-            </li>
-            <li>
-              <ScrollLink to="tel:+9779701122624" className="hover:text-paper">
-                +977-9701122624
-              </ScrollLink>
-            </li>
-            <li>Kupondole, Lalitpur</li>
-          </ul>
         </div>
-      </div>
+      </footer>
 
-      <div className="bg-gradient-to-b from-black via-[#141414] to-[#1F1E1E]">
-        <div className="flex items-center justify-between border-t hairline pt-6 px-6">
+      <div className="bg-gradient-to-b via-[#141414] to-[#1F1E1E]">
+        <div className="flex items-center justify-between pt-6 px-6">
           <div className="flex items-center gap-4">
             {SOCIALS.map((s) => (
               <ScrollLink key={s.label} to={s.href} aria-label={s.label}>
@@ -86,6 +91,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-    </footer>
+    </>
   );
 }
