@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { PAPERS } from "@/Data/Project";
+import ScrollLink from "@/utils/ScrollLink";
 
 export default function Projects() {
   return (
@@ -17,14 +18,14 @@ export default function Projects() {
             </h2>
           </div>
 
-          <a
-            href="#all-publications"
+          <ScrollLink
+            to="#all-publications"
             className="hidden lg:inline-flex items-center gap-2 rounded-full px-4 py-2 text-[13px] font-medium text-paper transition-opacity hover:opacity-85
        [background-image:linear-gradient(to_right,#FFFFFF1F,#FFFFFF14)]"
           >
             All Publications
             <span aria-hidden="true">→</span>
-          </a>
+          </ScrollLink>
         </div>
 
         {/* Desktop / tablet: grid */}
@@ -45,8 +46,8 @@ export default function Projects() {
                   {p.title}
                 </h3>
                 <p className="mt-2 text-[16px] text-muted-2">{p.desc}</p>
-                <a
-                  href={p.href}
+                <ScrollLink
+                  to={p.href}
                   className="mt-4 inline-block text-[16px] text-[#5CAEFF] font-normal hover:opacity-80 border-b border-[#5CAEFF] pb-1.5"
                 >
                   Read the Paper{" "}
@@ -61,7 +62,7 @@ export default function Projects() {
                         "invert(48%) sepia(90%) saturate(1000%) hue-rotate(190deg)",
                     }}
                   />
-                </a>
+                </ScrollLink>
               </div>
             </article>
           ))}
@@ -91,8 +92,8 @@ export default function Projects() {
                     {p.title}
                   </h3>
                   <p className="mt-2 text-[16px] text-muted-2">{p.desc}</p>
-                  <a
-                    href={p.href}
+                  <ScrollLink
+                    to={p.href}
                     className="mt-4 inline-block text-[16px] text-[#5CAEFF] font-normal hover:opacity-80 border-b border-[#5CAEFF] pb-1.5"
                   >
                     Read the Paper{" "}
@@ -107,7 +108,7 @@ export default function Projects() {
                           "invert(48%) sepia(90%) saturate(1000%) hue-rotate(190deg)",
                       }}
                     />
-                  </a>
+                  </ScrollLink>
                 </div>
               </article>
             ))}
@@ -115,14 +116,14 @@ export default function Projects() {
         </div>
 
         <div className="mt-8 flex lg:hidden">
-          <a
-            href="#all-publications"
+          <ScrollLink
+            to="#all-publications"
             className="flex w-full items-center justify-center gap-2 rounded-full px-4 py-2 text-[16px] font-normal text-paper transition-opacity hover:opacity-85
           [background-image:linear-gradient(to_right,#FFFFFF1F,#FFFFFF14)]"
           >
             All Publications
             <span aria-hidden="true">→</span>
-          </a>
+          </ScrollLink>
         </div>
       </div>
     </section>

@@ -27,11 +27,11 @@ export default function ResearchDomains() {
         </div>
 
         <div className="grid lg:grid-cols-2 lg:items-center lg:gap-16">
-          <ul ref={sectionRef} className="order-2 lg:order-none">
+          <ul ref={sectionRef} className="order-2 pt-8 lg:order-none">
             {DOMAINS.map((d, i) => {
               const isActive = i === active;
               return (
-                <li key={d.n} className="relative border-b border-white/10 pt-8 ">
+                <li key={d.n} className="relative border-b border-white/10 pt-4">
                   <button
                     type="button"
                     onClick={() => setActive(i)}

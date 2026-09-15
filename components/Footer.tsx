@@ -1,5 +1,6 @@
 import { COLUMNS, SOCIALS } from "@/Data/Footer";
 import Image from "next/image";
+import ScrollLink from "@/utils/ScrollLink";
 
 export default function Footer() {
   return (
@@ -13,12 +14,12 @@ export default function Footer() {
             <ul className="mt-4 space-y-3">
               {col.links.map((l) => (
                 <li key={l.label}>
-                  <a
-                    href={l.href}
+                  <ScrollLink
+                    to={l.href}
                     className="text-[#FFFFFFE0] text-[14px] md:text-[15px] font-normal font-creato transition-colors hover:text-paper"
                   >
                     {l.label}
-                  </a>
+                  </ScrollLink>
                 </li>
               ))}
             </ul>
@@ -31,14 +32,17 @@ export default function Footer() {
           </p>
           <ul className="mt-4 space-y-4 text-[14px] font-creato md:text-[15px]">
             <li>
-              <a href="mailto:info@deepfusion.ai" className="hover:text-paper">
+              <ScrollLink
+                to="mailto:info@deepfusion.ai"
+                className="hover:text-paper"
+              >
                 info@deepfusion.ai
-              </a>
+              </ScrollLink>
             </li>
             <li>
-              <a href="tel:+9779701122624" className="hover:text-paper">
+              <ScrollLink to="tel:+9779701122624" className="hover:text-paper">
                 +977-9701122624
-              </a>
+              </ScrollLink>
             </li>
             <li>Kupondole, Lalitpur</li>
           </ul>
@@ -49,17 +53,17 @@ export default function Footer() {
         <div className="flex items-center justify-between border-t hairline pt-6 px-6">
           <div className="flex items-center gap-4">
             {SOCIALS.map((s) => (
-              <a key={s.label} href={s.href} aria-label={s.label}>
+              <ScrollLink key={s.label} to={s.href} aria-label={s.label}>
                 <Image src={s.icon} alt={s.label} width={20} height={20} />
-              </a>
+              </ScrollLink>
             ))}
           </div>
-          <a
-            href="#top"
+          <ScrollLink
+            to="#top"
             className="text-[16px] text-[#FFFFFFB8] font-normal transition-colors hover:text-paper"
           >
             Back to top ↑
-          </a>
+          </ScrollLink>
         </div>
         <div className="px-5 md:px-0 mt-10 flex justify-center">
           <Image
@@ -73,12 +77,12 @@ export default function Footer() {
         <div className="mt-8 px-5 flex flex-col-reverse md:items-center justify-between gap-3 text-[12px] md:text-[14px] text-[#FFFFFFB8] sm:flex-row">
           <p className="pb-5">© 2026 Copyright DeepFusion AI Labs.</p>
           <div className="flex items-center gap-4">
-            <a href="#" className="hover:text-paper">
+            <ScrollLink to="#" className="hover:text-paper">
               Privacy Policy
-            </a>
-            <a href="#" className="hover:text-paper">
+            </ScrollLink>
+            <ScrollLink to="#" className="hover:text-paper">
               Terms &amp; Conditions
-            </a>
+            </ScrollLink>
           </div>
         </div>
       </div>

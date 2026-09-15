@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import ScrollLink from "@/utils/ScrollLink";
 
 export default function Hero() {
   return (
@@ -18,7 +21,7 @@ export default function Hero() {
             WebkitMaskImage:
               "linear-gradient(to right, transparent 0%, transparent 15%, black 90%, black 100%), " +
               "linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)",
-            WebkitMaskComposite: "source-in", 
+            WebkitMaskComposite: "source-in",
             maskImage:
               "linear-gradient(to right, transparent 0%, transparent 15%, black 90%, black 100%), " +
               "linear-gradient(to bottom, transparent 0%, black 20%, black 70%, transparent 100%)",
@@ -47,8 +50,8 @@ export default function Hero() {
           </p>
 
           <div className="mt-9 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-            <a
-              href="#domains"
+            <ScrollLink
+              to="domains"
               className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full border border-transparent bg-origin-border px-5 text-[13.5px] font-medium text-paper transition-opacity hover:opacity-85 sm:w-auto
               [background-image:radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0)_70%),linear-gradient(rgba(255,255,255,0.08),rgba(255,255,255,0.08)),linear-gradient(#0a0a0c,#0a0a0c),linear-gradient(45deg,#004181_0%,rgba(255,255,255,0.2)_100%)]
               [background-clip:padding-box,padding-box,padding-box,border-box]"
@@ -57,9 +60,9 @@ export default function Hero() {
               <span aria-hidden="true">
                 <Image src={"/arrow.svg"} alt="arrow" height={18} width={18} />
               </span>
-            </a>
-            <a
-              href="#why"
+            </ScrollLink>
+            <ScrollLink
+              to="why"
               className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full border hairline px-5 text-[13.5px] font-medium text-paper transition-colors hover:bg-surface-raised sm:w-auto"
             >
               Business Foundation
@@ -67,7 +70,7 @@ export default function Hero() {
                 {" "}
                 <Image src={"/arrow.svg"} alt="arrow" height={18} width={18} />
               </span>
-            </a>
+            </ScrollLink>
           </div>
         </div>
       </div>

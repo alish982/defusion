@@ -2,16 +2,17 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import ScrollLink from "@/utils/ScrollLink";
 
 const LINKS = [
-  { label: "Research", href: "#research" },
-  { label: "Why DeepFusion", href: "#why" },
-  { label: "Research Domains", href: "#domains" },
+  { label: "Research", id: "research" },
+  { label: "Why DeepFusion", id: "why" },
+  { label: "Research Domains", id: "domains" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-// <div className="relative mx-auto w-full py-8 px-6 sm:px-8 md:px-12 lg:px-24 lg:pt-28 xl:pl-32 xl:pt-32">
+  // <div className="relative mx-auto w-full py-8 px-6 sm:px-8 md:px-12 lg:px-24 lg:pt-28 xl:pl-32 xl:pt-32">
   return (
     <header className="md:px-5 lg:px-14 xl:px-28 fixed inset-x-0 top-0 z-50">
       <div
@@ -24,7 +25,7 @@ export default function Navbar() {
   "
       >
         <div className="mx-auto flex h-20 items-center justify-between px-6 lg:px-10">
-          <a href="#top" className="flex items-center gap-2 text-paper">
+          <ScrollLink to="#top" className="flex items-center gap-2 text-paper">
             <Image
               src="/logo.svg"
               height={36}
@@ -45,29 +46,29 @@ export default function Navbar() {
                 AI LABS
               </span>
             </span>
-          </a>
+          </ScrollLink>
 
           <nav className="hidden items-center gap-8 md:flex">
             {LINKS.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
+              <ScrollLink
+                key={link.id}
+                to={link.id}
                 className="text-[14px] text-[#FFFFFFCC/80] transition-colors hover:text-paper"
               >
                 {link.label}
-              </a>
+              </ScrollLink>
             ))}
           </nav>
 
           <div className="flex items-center gap-3">
-            <a
-              href="#contact"
+            <ScrollLink
+              to="#contact"
               className="hidden md:inline-flex h-10 items-center justify-center rounded-full border border-transparent bg-origin-border px-4 text-[13px] font-medium text-paper transition-opacity hover:opacity-85
               [background-image:radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0)_70%),linear-gradient(#0a0a0c,#0a0a0c),linear-gradient(45deg,#004181_0%,rgba(255,255,255,0.35)_100%)]
               [background-clip:padding-box,padding-box,border-box]"
             >
               Get in touch
-            </a>
+            </ScrollLink>
             <button
               onClick={() => setOpen((v) => !v)}
               aria-label="Toggle menu"
@@ -101,9 +102,9 @@ export default function Navbar() {
         <div className="fixed inset-x-0 z-40 flex h-[calc(100vh-80px)] flex-col bg-ink px-6 py-6 md:hidden">
           <nav className="flex flex-col">
             {LINKS.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
+              <ScrollLink
+                key={link.id}
+                to={link.id}
                 onClick={() => setOpen(false)}
                 className="flex items-center justify-between border-b hairline py-4 text-[14px] text-[#FFFFFFCC] transition-colors hover:text-paper"
               >
@@ -122,11 +123,11 @@ export default function Navbar() {
                     fill="none"
                   />
                 </svg>
-              </a>
+              </ScrollLink>
             ))}
           </nav>
-          <a
-            href="#contact"
+          <ScrollLink
+            to="#contact"
             onClick={() => setOpen(false)}
             className="mt-auto flex w-full items-center justify-center gap-2 rounded-full border hairline bg-surface-raised px-4 py-3.5 text-[15px] font-medium text-paper border border-transparent bg-origin-border px-5 text-[13.5px] font-medium text-paper transition-opacity hover:opacity-85 sm:w-auto
 [background-image:radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0)_70%),linear-gradient(rgba(255,255,255,0.08),rgba(255,255,255,0.08)),linear-gradient(#0a0a0c,#0a0a0c),linear-gradient(45deg,#004181_0%,rgba(255,255,255,0.2)_100%)]
@@ -138,7 +139,7 @@ export default function Navbar() {
                 <Image src={"/arrow.svg"} alt="arrow" height={18} width={18} />
               </span>
             </span>
-          </a>
+          </ScrollLink>
         </div>
       )}
     </header>
