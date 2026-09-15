@@ -33,7 +33,7 @@ function PillarCard({
       <div className="absolute inset-x-0 bottom-0 px-4">
         <div className="h-[102px] shadow-[0_-0.3px_0_theme(colors.neutral.300)]">
           <div className="py-5">
-            <p className="text-[24px] lg:text-[24px] font-normal font-creato text-white leading-[1.1] transition-opacity duration-[900ms] ease-in-out">
+            <p className="text-[24px] xl:text-[32px] font-normal font-creato text-white leading-[1.1] transition-opacity duration-[900ms] ease-in-out">
               {title}
             </p>
             <p
