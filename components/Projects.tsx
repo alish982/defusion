@@ -33,12 +33,13 @@ export default function Projects() {
           {PAPERS.map((p) => (
             <article
               key={p.title}
-              className="overflow-hidden rounded-2xl border hairline bg-surface"
+              className="overflow-hidden rounded-2xl bg-surface
+              border hairline"
             >
               <div className="relative aspect-[4/3]">
                 <Image src="/image1.png" alt="" fill className="object-cover" />
               </div>
-              <div className="p-5">
+              <div className="p-5 bg-[#181818]">
                 <p className="text-[12px] uppercase tracking-wide text-muted-2">
                   {p.tag}
                 </p>
@@ -84,7 +85,7 @@ export default function Projects() {
                     className="object-cover"
                   />
                 </div>
-                <div className="p-5">
+                <div className="p-5 bg-[#181818]">
                   <p className="text-[12px] uppercase tracking-wide text-muted-2">
                     {p.tag}
                   </p>
@@ -129,5 +130,3 @@ export default function Projects() {
     </section>
   );
 }
-
-

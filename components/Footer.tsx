@@ -54,7 +54,7 @@ export default function Footer() {
         </div>
       </footer>
 
-      <div className="bg-gradient-to-b via-[#141414] to-[#1F1E1E]">
+      <div className="bg-gradient-to-b via-[#141414] to-[#615F5F]">
         <div className="flex items-center justify-between pt-6 px-6">
           <div className="flex items-center gap-4">
             {SOCIALS.map((s) => (
