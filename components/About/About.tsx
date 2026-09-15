@@ -8,7 +8,7 @@ export default function About() {
       <GsapIntro />
       <ResearchDomains />
       <section id="why" className="py-12 md:py-0">
-        <div className="mx-auto max-w-[1600px] px-6 lg:px-10">
+        <div className="">
           <WhyDeepFusion />
         </div>
       </section>

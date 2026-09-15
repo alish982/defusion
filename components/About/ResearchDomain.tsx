@@ -14,13 +14,13 @@ export default function ResearchDomains() {
 
   return (
     <section id="domains" className="pt-8">
-      <div className="mx-auto max-w-[1600px] px-6 lg:px-10">
+      <div className="">
         <div className="text-center mb-6 md:mb-0">
           <div className="flex items-center justify-center gap-4">
             <span className="h-2 w-2 rotate-45 bg-blue-500" />
             <span>Research Domains</span>
           </div>
-          <h2 className="mx-auto my-4 text-balance text-[1.64rem] md:text-[2rem] font-light leading-tight tracking-tight sm:text-3xl whitespace-nowrap">
+          <h2 className="mx-auto my-4 text-balance text-[1.64rem] md:text-[2rem] text-[#F4F4F5] font-creato font-normal leading-tight tracking-tight sm:text-3xl whitespace-nowrap">
             DeepFusion AI builds lasting
             <br className="sm:hidden" /> AI capabilities.
           </h2>
@@ -39,17 +39,17 @@ export default function ResearchDomains() {
                   >
                     <span
                       className={`mt-0.5 shrink-0 text-[18px] transition-colors duration-300 ${
-                        isActive ? "text-blue-500" : "text-white/35"
+                        isActive ? "text-[#5CAEFF]" : "text-white/35"
                       }`}
                     >
                       {d.n}
                     </span>
                     <div className="flex-1">
                       <p
-                        className={`text-[18px] transition-colors duration-300 ${
+                        className={`text-[18px] font-creato font-normal transition-colors duration-300 ${
                           isActive
-                            ? "font-medium text-white"
-                            : "font-normal text-white/45"
+                            ? "text-white"
+                            : "text-white/45"
                         }`}
                       >
                         {d.title}
@@ -57,11 +57,11 @@ export default function ResearchDomains() {
 
                       {isActive ? (
                         <>
-                          <p className="mt-4 text-[14px] tracking-wide text-white/40">
+                          <p className="mt-4 text-[12px] font-normal tracking-wide text-[#71717A]">
                             {d.eyebrow}
                           </p>
                           {d.desc ? (
-                            <p className="mt-4 text-[16px] text-white/50">
+                            <p className="mt-4 text-[14px] text-[#A1A1AA]">
                               {d.desc}
                             </p>
                           ) : null}
@@ -77,7 +77,7 @@ export default function ResearchDomains() {
                   {isActive && (
                     <div className="h-px w-[45%] min-w-[220px] max-w-[300px] overflow-hidden bg-white/10">
                       <div
-                        className="h-full bg-blue-500"
+                        className="h-full bg-[#5CAEFF]"
                         style={{
                           width: fill ? "100%" : "0%",
                           transition: fill

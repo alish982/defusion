@@ -43,10 +43,10 @@ export default function GsapIntro() {
 
   return (
     <section className="py-10 lg:py-28">
-      <div className="mx-auto max-w-[1600px] px-6 lg:px-10">
+      <div className="">
         <p
           ref={containerRef}
-          className="text-balance font-light leading-[1.1] tracking-[-1px] text-[1.5rem] md:text-[3.2rem]"
+          className="text-balance text-center font-creato font-normal leading-[1.1] tracking-[-1px] text-[1.5rem] md:text-[3.25rem]"
         >
           {TEXT.split(" ").map((word, i) => (
             <span key={i} className="word inline-block mr-[0.28em]">
