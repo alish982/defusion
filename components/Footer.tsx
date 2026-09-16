@@ -1,3 +1,5 @@
+"use client";
+
 import { COLUMNS, SOCIALS } from "@/Data/Footer";
 import Image from "next/image";
 import ScrollLink from "@/components/ui/ScrollLink";
@@ -63,12 +65,13 @@ export default function Footer() {
               </ScrollLink>
             ))}
           </div>
-          <ScrollLink
-            to="top"
-            className="text-[16px] text-[#FFFFFFB8] font-normal transition-colors hover:text-paper"
+          <button
+            type="button"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="text-[16px] text-[#FFFFFFB8] font-normal transition-colors hover:text-paper cursor-pointer"
           >
             Back to top ↑
-          </ScrollLink>
+          </button>
         </div>
         <div className="px-5 md:px-0 mt-10 flex justify-center">
           <Image

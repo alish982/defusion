@@ -1,8 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import ScrollLink from "@/components/ui/ScrollLink";
+import Link from "next/link";
+import NavLink from "./ui/Navlink";
 
 const LINKS = [
   { label: "Research", id: "research" },
@@ -12,6 +14,14 @@ const LINKS = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
     <header
       className="md:px-5 lg:px-14 xl:px-28 fixed inset-x-0 top-0 z-50 bg-ink/90
@@ -22,7 +32,7 @@ export default function Navbar() {
     >
       <div className="">
         <div className="mx-auto flex h-20 items-center justify-between px-6 lg:px-10">
-          <ScrollLink to="#top" className="flex items-center gap-2 text-paper">
+          <Link href={"/"} className="flex items-center gap-2 text-paper">
             <Image
               src="/logo.svg"
               height={36}
@@ -43,17 +53,17 @@ export default function Navbar() {
                 AI LABS
               </span>
             </span>
-          </ScrollLink>
+          </Link>
 
-          <nav className="hidden items-center gap-8 md:flex">
+          <nav className="hidden items-center gap-8 md:flex cursor-pointer">
             {LINKS.map((link) => (
-              <ScrollLink
+              <NavLink
                 key={link.id}
                 to={link.id}
                 className="text-[14px] text-[#FFFFFFCC/80] transition-colors hover:text-paper"
               >
                 {link.label}
-              </ScrollLink>
+              </NavLink>
             ))}
           </nav>
 
@@ -67,7 +77,7 @@ export default function Navbar() {
               Get in touch
             </ScrollLink>
             <button
-              onClick={() => setOpen((v) => !v)}
+              onClick={() => setOpen(!open)}
               aria-label="Toggle menu"
               aria-expanded={open}
               className="grid h-9 w-9 place-items-center rounded-full text-paper md:hidden"
@@ -104,7 +114,7 @@ export default function Navbar() {
       >
         <nav className="flex flex-col">
           {LINKS.map((link) => (
-            <ScrollLink
+            <NavLink
               key={link.id}
               to={link.id}
               onClick={() => setOpen(false)}
@@ -125,7 +135,7 @@ export default function Navbar() {
                   fill="none"
                 />
               </svg>
-            </ScrollLink>
+            </NavLink>
           ))}
         </nav>
 
