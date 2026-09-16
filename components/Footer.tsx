@@ -1,6 +1,6 @@
 import { COLUMNS, SOCIALS } from "@/Data/Footer";
 import Image from "next/image";
-import ScrollLink from "@/utils/ScrollLink";
+import ScrollLink from "@/components/ui/ScrollLink";
 
 export default function Footer() {
   return (
@@ -54,7 +54,7 @@ export default function Footer() {
         </div>
       </footer>
 
-      <div className="bg-gradient-to-b via-[#141414] to-[#615F5F]">
+      <div className="bg-gradient-to-b via-[#141414] to-[#403D3D]">
         <div className="flex items-center justify-between pt-6 px-6">
           <div className="flex items-center gap-4">
             {SOCIALS.map((s) => (

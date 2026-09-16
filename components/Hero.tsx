@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import ScrollLink from "@/utils/ScrollLink";
+import ScrollLink from "@/components/ui/ScrollLink";
 
 export default function Hero() {
   return (

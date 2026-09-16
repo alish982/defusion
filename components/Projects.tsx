@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { PAPERS } from "@/Data/Project";
-import ScrollLink from "@/utils/ScrollLink";
+import ScrollLink from "@/components/ui/ScrollLink";
+import Link from "next/link";
 
 export default function Projects() {
   return (
@@ -18,14 +19,14 @@ export default function Projects() {
             </h2>
           </div>
 
-          <ScrollLink
-            to="#all-publications"
-            className="hidden lg:inline-flex items-center gap-2 rounded-full px-4 py-2 text-[13px] font-medium text-paper transition-opacity hover:opacity-85
-       [background-image:linear-gradient(to_right,#FFFFFF1F,#FFFFFF14)]"
+          <Link
+            href="/projects"
+            className="hidden lg:inline-flex items-center gap-2 rounded-full px-4 py-2 text-[13px] font-medium text-paper transition-all duration-300 ease-out hover:opacity-85 hover:scale-110
+   [background-image:linear-gradient(to_right,#FFFFFF1F,#FFFFFF14)]"
           >
             All Publications
             <span aria-hidden="true">→</span>
-          </ScrollLink>
+          </Link>
         </div>
 
         {/* Desktop / tablet: grid */}

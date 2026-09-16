@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import ScrollLink from "@/utils/ScrollLink";
+import ScrollLink from "@/components/ui/ScrollLink";
 
 const LINKS = [
   { label: "Research", id: "research" },
@@ -111,7 +111,11 @@ export default function Navbar() {
               className="flex items-center justify-between border-b hairline py-4 text-[14px] text-[#FFFFFFCC] transition-colors hover:text-paper"
             >
               {link.label}
-              <svg viewBox="0 0 20 20" className="h-4 w-4 text-muted" aria-hidden="true">
+              <svg
+                viewBox="0 0 20 20"
+                className="h-4 w-4 text-muted"
+                aria-hidden="true"
+              >
                 <path
                   d="M5 7.5l5 5 5-5"
                   stroke="currentColor"

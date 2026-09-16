@@ -9,11 +9,11 @@ const ITEM_DURATION = 4000;
 export default function ResearchDomains() {
   const { active, setActive, fill, sectionRef } = useAutoLoading(
     DOMAINS.length,
-    ITEM_DURATION
+    ITEM_DURATION,
   );
 
   return (
-    <section id="domains" className="pt-8">
+    <section id="domains" className="py-8">
       <div className="">
         <div className="text-center mb-6 md:mb-0">
           <div className="flex items-center justify-center gap-4">
@@ -26,16 +26,19 @@ export default function ResearchDomains() {
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 lg:items-center lg:gap-16">
-          <ul ref={sectionRef} className="order-2 pt-8 lg:order-none">
+        <div className="grid lg:grid-cols-2 lg:items-start lg:gap-36">
+          <ul ref={sectionRef} className="order-2 pt-4 lg:order-none">
             {DOMAINS.map((d, i) => {
               const isActive = i === active;
               return (
-                <li key={d.n} className="relative border-b border-white/10 pt-4">
+                <li
+                  key={d.n}
+                  className="relative border-b border-white/10 pt-4"
+                >
                   <button
                     type="button"
                     onClick={() => setActive(i)}
-                    className="flex w-full items-start gap-4 py-5 text-left"
+                    className="flex w-full items-start gap-4 py-4 text-left"
                   >
                     <span
                       className={`mt-0.5 shrink-0 text-[18px] transition-colors duration-300 ${
@@ -46,10 +49,8 @@ export default function ResearchDomains() {
                     </span>
                     <div className="flex-1">
                       <p
-                        className={`text-[18px] font-creato font-normal transition-colors duration-300 ${
-                          isActive
-                            ? "text-white"
-                            : "text-white/45"
+                        className={`text-[18px] font-creato font-medium transition-colors duration-300 ${
+                          isActive ? "text-white" : "text-white/45"
                         }`}
                       >
                         {d.title}
@@ -57,17 +58,17 @@ export default function ResearchDomains() {
 
                       {isActive ? (
                         <>
-                          <p className="mt-4 text-[12px] font-normal tracking-wide text-[#71717A]">
+                          <p className="mt-3 text-[12px] font-normal tracking-wide text-[#71717A]">
                             {d.eyebrow}
                           </p>
                           {d.desc ? (
-                            <p className="mt-4 text-[14px] text-[#A1A1AA]">
+                            <p className="mt-3 text-[14px] text-[#A1A1AA]">
                               {d.desc}
                             </p>
                           ) : null}
                         </>
                       ) : (
-                        <p className="mt-1 text-[11px] tracking-wide text-white/30">
+                        <p className="mt-2 text-[11px] tracking-wide text-white/30">
                           {d.eyebrow}
                         </p>
                       )}
@@ -91,15 +92,16 @@ export default function ResearchDomains() {
               );
             })}
           </ul>
-
-          <div className="order-1 aspect-[12/13] rounded-3xl lg:order-none lg:p-8">
-            <Image
-              src="/1.png"
-              alt="Design illustration"
-              width={500}
-              height={400}
-              className="h-full w-full rounded-lg border border-transparent bg-origin-border object-contain [background-image:linear-gradient(black,black),linear-gradient(90deg,rgba(0,0,0,0.6)_0%,rgba(255,255,255,0.6)_100%)] [background-clip:padding-box,border-box]"
-            />
+          <div className="order-1 lg:order-none lg:p-8">
+            <div className="relative h-[360px] w-full overflow-hidden rounded-3xl lg:h-[500px] lg:w-[500px]">
+              <Image
+                src="/1.png"
+                alt="Design illustration"
+                fill
+                sizes="(min-width: 1024px) 500px, 100vw"
+                className="h-full w-full rounded-lg object-contain [background-image:linear-gradient(black,black),linear-gradient(90deg,rgba(0,0,0,0.6)_0%,rgba(255,255,255,0.6)_100%)] [background-clip:padding-box,border-box]"
+              />
+            </div>
           </div>
         </div>
       </div>

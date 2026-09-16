@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { creatoDisplay } from "./font";
-import Container from "@/components/container";
-import Hero from "@/components/Hero";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const inter = Inter({
@@ -20,14 +19,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${inter.variable} ${creatoDisplay.variable}`}>
       <body className="antialiased bg-ink text-paper font-sans">
-        <Hero />
-        <Container>{children}</Container>
+        <Navbar />
+        {children}
         <Footer />
       </body>
     </html>
