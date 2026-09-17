@@ -6,16 +6,22 @@ import Projects from "@/components/Projects";
 import Container from "@/components/container";
 import { useEffect } from "react";
 
+const NAVBAR_OFFSET = 80;
+
 export default function Home() {
   useEffect(() => {
     const target = sessionStorage.getItem("scrollTarget");
-    if (target) {
-      sessionStorage.removeItem("scrollTarget");
-      setTimeout(() => {
-        document.getElementById(target)?.scrollIntoView({ behavior: "smooth" });
-      }, 150);
-    }
+    if (!target) return;
+    sessionStorage.removeItem("scrollTarget");
+
+    setTimeout(() => {
+      const el = document.getElementById(target);
+      if (!el) return;
+      const y = el.getBoundingClientRect().top + window.scrollY - 70;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }, 150);
   }, []);
+
   return (
     <>
       <Hero />

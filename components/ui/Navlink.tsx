@@ -10,7 +10,12 @@ type NavLinkProps = {
   onClick?: () => void;
 };
 
-export default function NavLink({ to, className, children, onClick }: NavLinkProps) {
+export default function NavLink({
+  to,
+  className,
+  children,
+  onClick,
+}: NavLinkProps) {
   const pathname = usePathname();
   const router = useRouter();
   const isHome = pathname === "/";
@@ -21,6 +26,7 @@ export default function NavLink({ to, className, children, onClick }: NavLinkPro
         to={to}
         smooth
         duration={500}
+        offset={-80}
         className={className}
         onClick={onClick}
       >
@@ -32,8 +38,8 @@ export default function NavLink({ to, className, children, onClick }: NavLinkPro
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     sessionStorage.setItem("scrollTarget", to);
-    onClick?.(); 
-    router.push("/");
+    onClick?.();
+    router.push("/", { scroll: false });
   };
 
   return (

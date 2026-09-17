@@ -31,7 +31,10 @@ export default function Navbar() {
           md:[mask-image:linear-gradient(to_bottom,black_10%,black_75%,transparent_100%)]"
     >
       <div className="">
-        <div className="mx-auto flex h-20 items-center justify-between px-6 lg:px-10">
+        <div
+          className="mx-auto flex h-20 items-center justify-between px-6 lg:px-10"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
           <Link href={"/"} className="flex items-center gap-2 text-paper">
             <Image
               src="/logo.svg"
