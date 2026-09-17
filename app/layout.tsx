@@ -4,6 +4,7 @@ import "./globals.css";
 import { creatoDisplay } from "./font";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SmoothScroller from "@/components/ui/smooth-scroll/SmoothScroller";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,11 +23,14 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${inter.variable} ${creatoDisplay.variable}`}>
+      <SmoothScroller>
+
       <body className="antialiased bg-ink text-paper font-sans">
         <Navbar />
         {children}
         <Footer />
       </body>
+      </SmoothScroller>
     </html>
   );
 }
