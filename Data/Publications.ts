@@ -28,7 +28,7 @@ export const publications: Publication[] = [
     slug: "on-device-wake-word-detection",
     date: "Jun 2026",
     category: "Edge AI",
-    title: "On-Device Wake-Word Detection Under 50KB",
+    title: "On-Device Wake-Word Detection Under 50KB with half a second time",
     summary: "A quantized keyword-spotting model that runs on microcontroller-class hardware.",
     accent: "linear-gradient(135deg, #232733 0%, #3a4150 60%, #14161c 100%)",
   },

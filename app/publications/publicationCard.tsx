@@ -20,11 +20,11 @@ export default function PublicationCard({
   accent,
 }: PublicationCardProps) {
   return (
-    <article className="overflow-hidden rounded-2xl border hairline bg-surface">
+    <article className="overflow-hidden rounded-2xl border hairline bg-[#181818] ">
       <div className="relative aspect-[4/3]">
         <Image src={image} alt={imageAlt} fill className="object-cover" />
       </div>
-      <div className="bg-[#181818] p-5">
+      <div className="p-5">
         <p className="text-[12px] uppercase tracking-wide text-muted-2">
           {tag}
           {"  "}- {date}
