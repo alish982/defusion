@@ -7,7 +7,7 @@ import ScrollLink from "@/components/ui/ScrollLink";
 export default function Footer() {
   return (
     <>
-      <footer id="contact" className="px-5">
+      <footer id="contact" className="px-5 pt-28">
         <div className="grid divide-y divide-white/10 lg:h-[422px] border hairline sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-y-0">
           {COLUMNS.map((col) => (
             <div key={col.title} className="py-5 md:pt-6 px-4 ">

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { DOMAINS } from "@/Data/About";
 import { useAutoLoading } from "./loading";
 
-const ITEM_DURATION = 4000;
+const ITEM_DURATION = 3000;
 
 export default function ResearchDomains() {
   const { active, setActive, fill, sectionRef } = useAutoLoading(
@@ -41,7 +41,7 @@ export default function ResearchDomains() {
                     className="flex w-full items-start gap-4 py-4 text-left"
                   >
                     <span
-                      className={`mt-0.5 shrink-0 text-[18px] transition-colors duration-300 ${
+                      className={`mt-0.5 shrink-0 text-[18px] transition-colors duration-700 ${
                         isActive ? "text-[#5CAEFF]" : "text-white/35"
                       }`}
                     >
@@ -49,7 +49,7 @@ export default function ResearchDomains() {
                     </span>
                     <div className="flex-1">
                       <p
-                        className={`text-[18px] font-creato font-medium transition-colors duration-300 ${
+                        className={`text-[18px] font-creato font-medium transition-colors duration-700 ${
                           isActive ? "text-white" : "text-white/45"
                         }`}
                       >
@@ -72,34 +72,59 @@ export default function ResearchDomains() {
                           {d.eyebrow}
                         </p>
                       )}
+                      <div
+                        className={`overflow-hidden transition-all duration-300 ease-out ${
+                          isActive
+                            ? "mt-3 h-px opacity-100"
+                            : "mt-0 h-0 opacity-0"
+                        }`}
+                      >
+                        <div className="h-px w-full overflow-hidden bg-white/10">
+                          <div
+                            className="h-full bg-[#5CAEFF]"
+                            style={{
+                              width: isActive && fill ? "100%" : "0%",
+                              transition:
+                                isActive && fill
+                                  ? `width ${ITEM_DURATION}ms linear`
+                                  : "none",
+                            }}
+                          />
+                        </div>
+                      </div>
                     </div>
                   </button>
-
-                  {isActive && (
-                    <div className="h-px w-[45%] min-w-[220px] max-w-[300px] overflow-hidden bg-white/10">
-                      <div
-                        className="h-full bg-[#5CAEFF]"
-                        style={{
-                          width: fill ? "100%" : "0%",
-                          transition: fill
-                            ? `width ${ITEM_DURATION}ms linear`
-                            : "none",
-                        }}
-                      />
-                    </div>
-                  )}
                 </li>
               );
             })}
           </ul>
           <div className="order-1 lg:order-none lg:p-8">
             <div className="relative h-[360px] w-full overflow-hidden rounded-3xl lg:h-[500px] lg:w-[500px]">
-              <Image
-                src="/1.png"
-                alt="Design illustration"
-                fill
-                sizes="(min-width: 1024px) 500px, 100vw"
-                className="h-full w-full rounded-lg object-contain [background-image:linear-gradient(black,black),linear-gradient(90deg,rgba(0,0,0,0.6)_0%,rgba(255,255,255,0.6)_100%)] [background-clip:padding-box,border-box]"
+              {DOMAINS.map((d, i) => (
+                <Image
+                  key={d.image}
+                  src={d.image}
+                  alt={d.title}
+                  fill
+                  sizes="(min-width: 1024px) 500px, 100vw"
+                  priority={i === 0}
+                  className={`h-full w-full rounded-lg object-contain absolute inset-0 transition-opacity duration-700 ease-out ${
+                    i === active ? "opacity-100" : "opacity-0"
+                  }`}
+                />
+              ))}
+
+              <div
+                className="pointer-events-none absolute inset-0 rounded-3xl"
+                style={{
+                  background: `
+          radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.85) 100%),
+          linear-gradient(to top, rgba(0,0,0,0.6), transparent 25%),
+          linear-gradient(to bottom, rgba(0,0,0,0.6), transparent 25%),
+          linear-gradient(to left, rgba(0,0,0,0.6), transparent 25%),
+          linear-gradient(to right, rgba(0,0,0,0.6), transparent 25%)
+        `,
+                }}
               />
             </div>
           </div>

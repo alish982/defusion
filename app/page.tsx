@@ -2,7 +2,8 @@
 
 import Hero from "@/components/Hero";
 import About from "@/components/About/About";
-import Projects from "@/components/Projects";
+import Projects from "@/components/Publications";
+import ContactUs from "@/components/ContactUs";
 import Container from "@/components/container";
 import { useEffect } from "react";
 
@@ -28,6 +29,7 @@ export default function Home() {
       <Container className="xl:pt-32">
         <About />
         <Projects />
+        <ContactUs />
       </Container>
     </>
   );

@@ -83,14 +83,14 @@ export default function Navbar() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <ScrollLink
-            to="#contact"
-            className="hidden md:inline-flex h-10 items-center justify-center rounded-full border border-transparent bg-origin-border px-4 text-[13px] font-medium text-paper transition-opacity hover:opacity-85
+          <NavLink
+            to="contact"
+            className="hidden md:inline-flex h-10 items-center justify-center rounded-full border border-transparent bg-origin-border px-4 text-[13px] font-medium text-paper transition-opacity hover:opacity-85 cursor-pointer
               [background-image:radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0)_70%),linear-gradient(#0a0a0c,#0a0a0c),linear-gradient(45deg,#004181_0%,rgba(255,255,255,0.35)_100%)]
               [background-clip:padding-box,padding-box,border-box]"
           >
             Get in touch
-          </ScrollLink>
+          </NavLink>
           <button
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"

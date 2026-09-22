@@ -9,7 +9,7 @@ import PublicationCard from "./publicationCard";
 import Pagination from "@/utils/Pagination";
 
 const CATEGORIES = ["All", "Edge AI", "Speech and Voice", "Multimodal"];
-const ITEMS_PER_PAGE = 9;
+const ITEMS_PER_PAGE = 8;
 const TRANSITION_MS = 220;
 
 export default function ProjectsPage() {
@@ -120,7 +120,7 @@ export default function ProjectsPage() {
           </div>
 
           <div
-            className="grid min-h-[600px] grid-cols-1 gap-6 transition-all ease-out sm:grid-cols-2 lg:grid-cols-3"
+            className="grid min-h-[600px] grid-cols-1 gap-6 transition-all ease-out sm:grid-cols-2 lg:grid-cols-4"
             style={{
               transitionDuration: `${TRANSITION_MS}ms`,
               opacity: isTransitioning ? 0 : 1,

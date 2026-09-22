@@ -20,7 +20,7 @@ function PillarCard({
       className={`relative overflow-hidden bg-surface border-r-[0.8px] ${className}`}
       style={{ borderRight: "0.3px solid rgba(106, 101, 101, 0.97)" }}
     >
-      <div className="absolute inset-0 ">
+      <div className="absolute inset-0">
         <Image
           src="/fiber.png"
           alt="Woven texture"

@@ -32,7 +32,7 @@ export default function Projects() {
 
         {/* Desktop / tablet: grid */}
         <Link href="/publications">
-          <div className="mt-12 hidden gap-6 sm:grid sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 hidden gap-6 sm:grid sm:grid-cols-2 lg:grid-cols-4">
             {PAPERS.map((p) => (
               <PublicationCard
                 date={p.date}

@@ -32,7 +32,7 @@ export default function PublicationCard({
         <h3 className="mt-3 font-creato text-[18px] font-medium leading-snug">
           {title}
         </h3>
-        <p className="mt-2 line-clamp-2 text-[16px] text-muted-2">{desc}</p>
+        {/* <p className="mt-2 line-clamp-2 text-[16px] text-muted-2">{desc}</p> */}
         <div className="mt-4 inline-block border-b border-[#5CAEFF] pb-1.5 text-[16px] font-normal text-[#5CAEFF] hover:opacity-80">
           Read the Paper{" "}
           <Image

@@ -23,4 +23,12 @@ export const PAPERS = [
     href: "#",
     accent: "linear-gradient(135deg, #2b2f38 0%, #4a5568 60%, #1a1d23 100%)",
   },
+  {
+    date: "Jun 2026",
+    tag: "Tech",
+    title: "Efficient Multimodal Grounding for On-Device Inference Informations",
+    desc: "One sentence on what the work found or produced.",
+    href: "#",
+    accent: "linear-gradient(135deg, #2b2f38 0%, #4a5568 60%, #1a1d23 100%)",
+  },
 ];
