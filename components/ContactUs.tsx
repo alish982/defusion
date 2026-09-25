@@ -13,7 +13,7 @@ export interface ContactFormValues {
 
 export default function ContactUs() {
   const [status, setStatus] = useState<
-    "idle" | "loading" | "success" | "error"
+    "idle" | "loading" | "success" | "error" | "empty"
   >("idle");
   const [form, setForm] = useState({
     firstName: "",
@@ -31,6 +31,23 @@ export default function ContactUs() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const requiredFields: (keyof typeof form)[] = [
+      "firstName",
+      "lastName",
+      "company",
+      "phone",
+      "message",
+    ];
+    const hasEmptyField = requiredFields.some(
+      (field) => form[field].trim() === "",
+    );
+
+    if (hasEmptyField) {
+      setStatus("empty");
+      return;
+    }
+
     setStatus("loading");
 
     try {
@@ -62,7 +79,7 @@ export default function ContactUs() {
   };
 
   return (
-    <section id="contact" className="py-24">
+    <section id="contact" className="py-12 md:py-24">
       <div className="mx-auto max-w-4xl">
         {/* Eyebrow */}
         <div className="flex items-center justify-center gap-2">
@@ -71,12 +88,13 @@ export default function ContactUs() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-3 text-center text-[40px] font-creato font-medium text-paper md:text-[32px]">
-          Get to know more about us
+        <h2 className="mt-3 text-center text-[1.75rem] md:text-[40px] font-creato font-medium text-paper md:text-[32px]">
+          Get to know more
+          <br className="md:hidden" /> about us
         </h2>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="mt-12 space-y-8">
+        <form onSubmit={handleSubmit} className="mt-12 space-y-4 md:space-y-8">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
             <Field
               label="First Name"
@@ -109,7 +127,6 @@ export default function ContactUs() {
                 <span className="text-[14px] font-creato text-[#FFFFFFB8]">
                   +977
                 </span>
-                {/* <ChevronDown className="h-3.5 w-3.5 text-[#FFFFFFB8]" /> */}
                 <span className="mx-1 h-4 w-px bg-white/15" />
                 <input
                   type="tel"
@@ -149,6 +166,9 @@ export default function ContactUs() {
               </span>
             </span>
           </button>
+          {status === "empty" && (
+            <p className="text-[13px] text-red-400">Please fill the form.</p>
+          )}
           {status === "success" && (
             <p className="text-[13px] text-green-400">
               Message sent — we'll be in touch.
@@ -184,7 +204,7 @@ function Field({
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        className="mt-3 w-full rounded-lg border border-[#9A9FA699] bg-transparent px-4 py-4 text-[14px] text-paper placeholder:text-[16px] placeholder:text-[#9A9FA6] focus:border-[#5CAEFF]/50 focus:outline-none"
+        className="mt-1 md:mt-3 w-full rounded-lg border border-[#9A9FA699] bg-transparent px-4 py-4 text-[14px] text-paper placeholder:text-[16px] placeholder:text-[#9A9FA6] focus:border-[#5CAEFF]/50 focus:outline-none"
       />
     </div>
   );
