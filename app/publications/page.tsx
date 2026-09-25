@@ -16,7 +16,7 @@ export default function ProjectsPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
-  const [displayPage, setDisplayPage] = useState(1); // page actually rendered in the grid
+  const [displayPage, setDisplayPage] = useState(1); 
   const [isTransitioning, setIsTransitioning] = useState(false);
   const topRef = useRef<HTMLDivElement>(null);
   const isFirstRender = useRef(true);

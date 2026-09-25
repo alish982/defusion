@@ -35,6 +35,18 @@ export default function ResearchDomains() {
                   key={d.n}
                   className="relative border-b border-white/10 pt-4"
                 >
+                  <div className="absolute bottom-0 left-0 h-px w-full overflow-hidden">
+                    <div
+                      className="h-full bg-[#5CAEFF]"
+                      style={{
+                        width: isActive && fill ? "100%" : "0%",
+                        transition:
+                          isActive && fill
+                            ? `width ${ITEM_DURATION}ms linear`
+                            : "none",
+                      }}
+                    />
+                  </div>
                   <button
                     type="button"
                     onClick={() => setActive(i)}
@@ -78,20 +90,7 @@ export default function ResearchDomains() {
                             ? "mt-3 h-px opacity-100"
                             : "mt-0 h-0 opacity-0"
                         }`}
-                      >
-                        <div className="h-px w-full overflow-hidden bg-white/10">
-                          <div
-                            className="h-full bg-[#5CAEFF]"
-                            style={{
-                              width: isActive && fill ? "100%" : "0%",
-                              transition:
-                                isActive && fill
-                                  ? `width ${ITEM_DURATION}ms linear`
-                                  : "none",
-                            }}
-                          />
-                        </div>
-                      </div>
+                      ></div>
                     </div>
                   </button>
                 </li>
