@@ -4,8 +4,8 @@ import { useState } from "react";
 import Image from "next/image";
 
 export interface ContactFormValues {
-  firstName: string;
-  lastName: string;
+  fullName: string;
+  email: string;
   company: string;
   phone: string;
   message: string;
@@ -16,8 +16,8 @@ export default function ContactUs() {
     "idle" | "loading" | "success" | "error" | "empty"
   >("idle");
   const [form, setForm] = useState({
-    firstName: "",
-    lastName: "",
+    fullName: "",
+    email: "",
     company: "",
     phone: "",
     message: "",
@@ -33,8 +33,8 @@ export default function ContactUs() {
     e.preventDefault();
 
     const requiredFields: (keyof typeof form)[] = [
-      "firstName",
-      "lastName",
+      "fullName",
+      "email",
       "company",
       "phone",
       "message",
@@ -55,8 +55,8 @@ export default function ContactUs() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          firstName: form.firstName,
-          lastName: form.lastName,
+          fullName: form.fullName,
+          email: form.email,
           company: form.company,
           phone: form.phone,
           message: form.message,
@@ -67,8 +67,8 @@ export default function ContactUs() {
 
       setStatus("success");
       setForm({
-        firstName: "",
-        lastName: "",
+        fullName: "",
+        email: "",
         company: "",
         phone: "",
         message: "",
@@ -97,16 +97,16 @@ export default function ContactUs() {
         <form onSubmit={handleSubmit} className="mt-12 space-y-4 md:space-y-8">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
             <Field
-              label="First Name"
-              placeholder="Enter your first name"
-              value={form.firstName}
-              onChange={handleChange("firstName")}
+              label="Full Name"
+              placeholder="Enter your full name"
+              value={form.fullName}
+              onChange={handleChange("fullName")}
             />
             <Field
-              label="Last Name"
-              placeholder="Enter your last name"
-              value={form.lastName}
-              onChange={handleChange("lastName")}
+              label="Email"
+              placeholder="Enter your email"
+              value={form.email}
+              onChange={handleChange("email")}
             />
           </div>
 
