@@ -19,14 +19,27 @@ export default function Projects() {
               <br className="sm:hidden" /> Works
             </h2>
           </div>
-
           <Link
             href="/publications"
-            className="hidden lg:inline-flex items-center gap-2 rounded-full px-4 py-2 text-[13px] font-medium text-paper transition-all duration-300 ease-out hover:opacity-85 hover:scale-110
-   [background-image:linear-gradient(to_right,#FFFFFF1F,#FFFFFF14)]"
+            className="relative hidden lg:inline-flex h-12 items-center justify-center gap-1.5 rounded-full px-5 text-sm font-normal leading-5 text-white transition-all duration-300 ease-out hover:opacity-85 hover:scale-110
+    [background-image:radial-gradient(128.68%_444.44%_at_0%_0%,rgba(255,255,255,0.25)_0%,rgba(255,255,255,0)_78%)]
+    before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:p-px
+    before:[background:linear-gradient(45deg,#004181_0%,rgba(255,255,255,0.2)_100%)]
+    before:[-webkit-mask-image:linear-gradient(#000,#000),linear-gradient(#000,#000)]
+    before:[-webkit-mask-clip:content-box,border-box]
+    before:[-webkit-mask-composite:xor]
+    before:[mask-image:linear-gradient(#000,#000),linear-gradient(#000,#000)]
+    before:[mask-clip:content-box,border-box]
+    before:[mask-composite:exclude]"
           >
             All Publications
-            <span aria-hidden="true">→</span>
+            <Image
+              src="/arrow.svg"
+              alt=""
+              width={16}
+              height={16}
+              aria-hidden="true"
+            />
           </Link>
         </div>
 
@@ -94,11 +107,25 @@ export default function Projects() {
         <div className="mt-8 flex lg:hidden">
           <Link
             href="/publications"
-            className="flex w-full items-center justify-center gap-2 rounded-full px-4 py-2 text-[16px] font-normal text-paper transition-opacity hover:opacity-85
-          [background-image:linear-gradient(to_right,#FFFFFF1F,#FFFFFF14)]"
+            className="relative flex h-12 w-full items-center justify-center gap-1.5 rounded-full px-5 text-sm font-normal leading-5 text-white transition-opacity hover:opacity-85
+    [background-image:radial-gradient(128.68%_444.44%_at_0%_0%,rgba(255,255,255,0.25)_0%,rgba(255,255,255,0)_78%)]
+    before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:p-px
+    before:[background:linear-gradient(45deg,#004181_0%,rgba(255,255,255,0.2)_100%)]
+    before:[-webkit-mask-image:linear-gradient(#000,#000),linear-gradient(#000,#000)]
+    before:[-webkit-mask-clip:content-box,border-box]
+    before:[-webkit-mask-composite:xor]
+    before:[mask-image:linear-gradient(#000,#000),linear-gradient(#000,#000)]
+    before:[mask-clip:content-box,border-box]
+    before:[mask-composite:exclude]"
           >
             All Publications
-            <span aria-hidden="true">→</span>
+            <Image
+              src="/arrow.svg"
+              alt=""
+              width={16}
+              height={16}
+              aria-hidden="true"
+            />
           </Link>
         </div>
       </div>

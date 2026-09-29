@@ -120,7 +120,7 @@ export default function ProjectsPage() {
           </div>
 
           <div
-            className="grid min-h-[600px] grid-cols-1 gap-6 transition-all ease-out sm:grid-cols-2 lg:grid-cols-4"
+            className="grid grid-cols-1 gap-6 transition-all ease-out sm:grid-cols-2 lg:grid-cols-4"
             style={{
               transitionDuration: `${TRANSITION_MS}ms`,
               opacity: isTransitioning ? 0 : 1,

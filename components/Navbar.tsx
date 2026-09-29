@@ -7,6 +7,7 @@ import Link from "next/link";
 import NavLink from "./ui/Navlink";
 import { useHideOnScroll } from "./ui/smooth-scroll/Hideonscroll";
 import gsap from "gsap";
+import { useLenis } from "lenis/react";
 
 const LINKS = [
   { label: "Research", id: "research" },
@@ -19,16 +20,23 @@ export default function Navbar() {
   const hidden = useHideOnScroll(80);
   const barRef = useRef<HTMLDivElement>(null);
 
+  const lenis = useLenis();
+
+  useEffect(() => {
+    if (open) lenis?.stop();
+    else lenis?.start();
+  }, [open, lenis]);
+
   useEffect(() => {
     if (!barRef.current) return;
 
     gsap.to(barRef.current, {
-      yPercent: hidden ? -100 : 0,
+      yPercent: hidden && !open ? -100 : 0,
       duration: 0.35,
       ease: "power2.out",
       overwrite: "auto",
     });
-  }, [hidden]);
+  }, [hidden, open]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -40,6 +48,7 @@ export default function Navbar() {
   return (
     <header ref={barRef} className="fixed inset-x-0 top-0 z-50">
       <div
+        data-lenis-prevent
         className="mx-auto flex h-20 items-center justify-between
           px-6 md:px-5 lg:px-14 xl:px-28 lg:px-10
           bg-ink/90 md:bg-ink/70 backdrop-blur-md
@@ -61,7 +70,7 @@ export default function Navbar() {
             }}
           />
           <span className="flex flex-col leading-tight">
-            <span className="md:text-[24px] font-medium tracking-tight">
+            <span className="md:text-[20px] lg:text-[24px] font-medium tracking-tight">
               DEEPFUSION
             </span>
             <span className="text-[12px] text-[#FFFFFF] font-normal -mt-1">
@@ -85,14 +94,31 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <NavLink
             to="contact"
-            className="hidden md:inline-flex h-10 items-center justify-center rounded-full border border-transparent bg-origin-border px-4 text-[13px] font-medium text-paper transition-opacity hover:opacity-65 cursor-pointer
-              [background-image:radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0)_70%),linear-gradient(#0a0a0c,#0a0a0c),linear-gradient(45deg,#004181_0%,rgba(255,255,255,0.35)_100%)]
-              [background-clip:padding-box,padding-box,border-box]"
+            className="relative hidden md:inline-flex h-11 min-w-14 cursor-pointer items-center justify-center gap-1.5 rounded-full px-5 text-sm font-normal leading-5 text-white transition-opacity hover:opacity-65
+            [background-image:radial-gradient(128.68%_444.44%_at_0%_0%,rgba(255,255,255,0.25)_0%,rgba(255,255,255,0)_78%)]
+            before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:p-px
+            before:[background:linear-gradient(45deg,#004181_0%,rgba(255,255,255,0.2)_100%)]
+            before:[-webkit-mask-image:linear-gradient(#000,#000),linear-gradient(#000,#000)]
+            before:[-webkit-mask-clip:content-box,border-box]
+            before:[-webkit-mask-composite:xor]
+            before:[mask-image:linear-gradient(#000,#000),linear-gradient(#000,#000)]
+            before:[mask-clip:content-box,border-box]
+            before:[mask-composite:exclude]"
           >
-            Get in touch
+            Get in Touch
+            <Image
+              src="/arrow.svg"
+              alt=""
+              width={16}
+              height={16}
+              aria-hidden="true"
+            />
           </NavLink>
           <button
-            onClick={() => setOpen(!open)}
+            onClick={(e) => {
+              e.stopPropagation();
+              setOpen(!open);
+            }}
             aria-label="Toggle menu"
             aria-expanded={open}
             className="grid h-9 w-9 place-items-center rounded-full text-paper md:hidden"

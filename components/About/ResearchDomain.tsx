@@ -4,7 +4,7 @@ import Image from "next/image";
 import { DOMAINS } from "@/Data/About";
 import { useAutoLoading } from "./loading";
 
-const ITEM_DURATION = 3000;
+const ITEM_DURATION = 4500;
 
 export default function ResearchDomains() {
   const { active, setActive, fill, sectionRef } = useAutoLoading(
@@ -97,17 +97,17 @@ export default function ResearchDomains() {
               );
             })}
           </ul>
-          <div className="order-1 lg:order-none lg:p-8">
-            <div className="relative h-[360px] w-full overflow-hidden rounded-3xl lg:h-[500px] lg:w-[500px]">
+          <div className="order-1 lg:order-none lg:self-center lg:justify-self-center lg:p-4 xl:p-8">
+            <div className="relative h-[360px] w-full overflow-hidden rounded-3xl lg:h-[340px] lg:w-[340px] xl:h-[420px] xl:w-[420px] 2xl:h-[500px] 2xl:w-[500px]">
               {DOMAINS.map((d, i) => (
                 <Image
                   key={d.image}
                   src={d.image}
                   alt={d.title}
                   fill
-                  sizes="(min-width: 1024px) 500px, 100vw"
+                  sizes="(min-width: 1536px) 500px, (min-width: 1280px) 420px, (min-width: 1024px) 340px, 100vw"
                   priority={i === 0}
-                  className={`h-full w-full rounded-lg object-contain absolute inset-0 transition-opacity duration-700 ease-out ${
+                  className={`absolute inset-0 h-full w-full rounded-lg object-contain transition-opacity duration-700 ease-out ${
                     i === active ? "opacity-100" : "opacity-0"
                   }`}
                 />

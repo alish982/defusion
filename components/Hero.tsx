@@ -33,7 +33,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40" />
       </div>
 
-      <div className="relative mx-auto w-full py-8 px-6 sm:px-8 md:px-12 lg:px-24 lg:pt-28 xl:pl-40 xl:pt-32">
+      <div className="relative mx-auto w-full max-w-[1900px] py-8 px-6 sm:px-8 md:px-12 lg:px-24 lg:pt-28 xl:pl-40 xl:pt-32">
         <div className="max-w-2xl">
           <h1 className="text-balance text-[2.25rem] font-creato font-normal leading-[1.1] tracking-tight sm:text-5xl md:text-6xl lg:text-[4.75rem] lg:leading-[1.08]">
             <span className="font-creato bg-gradient-to-r from-[#7F9AB4] to-[#F4F4F5] bg-clip-text text-transparent whitespace-nowrap">

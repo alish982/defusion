@@ -3,6 +3,7 @@
 import { COLUMNS, SOCIALS } from "@/Data/Footer";
 import Image from "next/image";
 import ScrollLink from "@/components/ui/ScrollLink";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -82,12 +83,27 @@ export default function Footer() {
           />
         </div>
 
-        <div className="mt-8 px-5 flex flex-col-reverse md:items-center justify-between gap-3 text-[12px] md:text-[14px] text-[#FFFFFFB8] sm:flex-row">
-          <p className="pb-5">© 2026 Copyright DeepFusion AI Labs.</p>
+        <div className="mt-10 md:mt-16 flex flex-col-reverse items-start justify-between gap-3 px-5 pb-5 text-[12px] text-[#FFFFFFB8] sm:flex-row sm:items-center md:text-[14px]">
+          <p className="text-sm">© 2026 Copyright DeepFusion AI Labs.</p>
+          <Link
+            href="https://prixa.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex shrink-0 items-center"
+          >
+            <Image
+              src="/prixalogo.svg"
+              alt="Prixa logo"
+              width={100}
+              height={28}
+              className="h-8 w-auto md:h-6 lg:h-11"
+            />
+          </Link>
           <div className="flex items-center gap-4">
             <ScrollLink to="#" className="hover:text-paper">
               Privacy Policy
             </ScrollLink>
+
             <ScrollLink to="#" className="hover:text-paper">
               Terms &amp; Conditions
             </ScrollLink>

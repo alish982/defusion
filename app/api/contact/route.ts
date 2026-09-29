@@ -1,5 +1,5 @@
 import { serverEnv } from "@/app/config/env";
-import type { ContactFormValues } from "@/components/ContactUs";
+import { contactSchema } from "@/utils/contactschema";
 import { resend } from "@/utils/resend";
 
 const escapeHtml = (str: string) =>
@@ -11,22 +11,36 @@ const escapeHtml = (str: string) =>
     .replace(/'/g, "&#39;");
 
 export async function POST(request: Request) {
-  const { fullName, email, company, phone, message } =
-    (await request.json()) as ContactFormValues;
+  let body: unknown;
+  try {
+    body = await request.json();
+  } catch {
+    return Response.json({ message: "Invalid JSON body." }, { status: 400 });
+  }
 
-  if (!fullName || !email || !message) {
+  // Same schema as the client: only fullName, email and phone are required
+  const parsed = contactSchema.safeParse(body);
+
+  if (!parsed.success) {
+    const errors: Record<string, string> = {};
+    for (const issue of parsed.error.issues) {
+      const key = String(issue.path[0]);
+      if (!errors[key]) errors[key] = issue.message;
+    }
     return Response.json(
-      { message: "Full name, email, and message are required." },
+      { message: "Invalid form data.", errors },
       { status: 400 },
     );
   }
+
+  const { fullName, email, company, phone, message } = parsed.data;
 
   const safe = {
     fullName: escapeHtml(fullName),
     email: escapeHtml(email),
     company: escapeHtml(company || "—"),
     phone: escapeHtml(phone || "—"),
-    message: escapeHtml(message).replace(/\n/g, "<br/>"),
+    message: message ? escapeHtml(message).replace(/\n/g, "<br/>") : "—",
   };
 
   try {
