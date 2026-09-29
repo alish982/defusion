@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { PAPERS } from "@/Data/Project";
-import ScrollLink from "@/components/ui/ScrollLink";
+import GradientButton from "./ui/button";
 import Link from "next/link";
 import PublicationCard from "@/app/publications/publicationCard";
 
@@ -19,28 +19,13 @@ export default function Projects() {
               <br className="sm:hidden" /> Works
             </h2>
           </div>
-          <Link
+          <GradientButton
+            as={Link}
             href="/publications"
-            className="relative hidden lg:inline-flex h-12 items-center justify-center gap-1.5 rounded-full px-5 text-sm font-normal leading-5 text-white transition-all duration-300 ease-out hover:opacity-85 hover:scale-110
-    [background-image:radial-gradient(128.68%_444.44%_at_0%_0%,rgba(255,255,255,0.25)_0%,rgba(255,255,255,0)_78%)]
-    before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:p-px
-    before:[background:linear-gradient(45deg,#004181_0%,rgba(255,255,255,0.2)_100%)]
-    before:[-webkit-mask-image:linear-gradient(#000,#000),linear-gradient(#000,#000)]
-    before:[-webkit-mask-clip:content-box,border-box]
-    before:[-webkit-mask-composite:xor]
-    before:[mask-image:linear-gradient(#000,#000),linear-gradient(#000,#000)]
-    before:[mask-clip:content-box,border-box]
-    before:[mask-composite:exclude]"
+            className="max-lg:hidden hover:scale-110"
           >
             All Publications
-            <Image
-              src="/arrow.svg"
-              alt=""
-              width={16}
-              height={16}
-              aria-hidden="true"
-            />
-          </Link>
+          </GradientButton>
         </div>
 
         {/* Desktop / tablet: grid */}
@@ -105,28 +90,9 @@ export default function Projects() {
         </Link>
 
         <div className="mt-8 flex lg:hidden">
-          <Link
-            href="/publications"
-            className="relative flex h-12 w-full items-center justify-center gap-1.5 rounded-full px-5 text-sm font-normal leading-5 text-white transition-opacity hover:opacity-85
-    [background-image:radial-gradient(128.68%_444.44%_at_0%_0%,rgba(255,255,255,0.25)_0%,rgba(255,255,255,0)_78%)]
-    before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:p-px
-    before:[background:linear-gradient(45deg,#004181_0%,rgba(255,255,255,0.2)_100%)]
-    before:[-webkit-mask-image:linear-gradient(#000,#000),linear-gradient(#000,#000)]
-    before:[-webkit-mask-clip:content-box,border-box]
-    before:[-webkit-mask-composite:xor]
-    before:[mask-image:linear-gradient(#000,#000),linear-gradient(#000,#000)]
-    before:[mask-clip:content-box,border-box]
-    before:[mask-composite:exclude]"
-          >
+          <GradientButton as={Link} href="/publications" className="w-full">
             All Publications
-            <Image
-              src="/arrow.svg"
-              alt=""
-              width={16}
-              height={16}
-              aria-hidden="true"
-            />
-          </Link>
+          </GradientButton>
         </div>
       </div>
     </section>

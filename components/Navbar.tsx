@@ -8,6 +8,7 @@ import NavLink from "./ui/Navlink";
 import { useHideOnScroll } from "./ui/smooth-scroll/Hideonscroll";
 import gsap from "gsap";
 import { useLenis } from "lenis/react";
+import GradientButton from "./ui/button";
 
 const LINKS = [
   { label: "Research", id: "research" },
@@ -92,28 +93,13 @@ export default function Navbar() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <NavLink
+          <GradientButton
+            as={NavLink}
             to="contact"
-            className="relative hidden md:inline-flex h-11 min-w-14 cursor-pointer items-center justify-center gap-1.5 rounded-full px-5 text-sm font-normal leading-5 text-white transition-opacity hover:opacity-65
-            [background-image:radial-gradient(128.68%_444.44%_at_0%_0%,rgba(255,255,255,0.25)_0%,rgba(255,255,255,0)_78%)]
-            before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:p-px
-            before:[background:linear-gradient(45deg,#004181_0%,rgba(255,255,255,0.2)_100%)]
-            before:[-webkit-mask-image:linear-gradient(#000,#000),linear-gradient(#000,#000)]
-            before:[-webkit-mask-clip:content-box,border-box]
-            before:[-webkit-mask-composite:xor]
-            before:[mask-image:linear-gradient(#000,#000),linear-gradient(#000,#000)]
-            before:[mask-clip:content-box,border-box]
-            before:[mask-composite:exclude]"
+            className="max-md:hidden !h-11 hover:opacity-65"
           >
             Get in Touch
-            <Image
-              src="/arrow.svg"
-              alt=""
-              width={16}
-              height={16}
-              aria-hidden="true"
-            />
-          </NavLink>
+          </GradientButton>
           <button
             onClick={(e) => {
               e.stopPropagation();
@@ -165,18 +151,14 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <ScrollLink
+        <GradientButton
+          as={ScrollLink}
           to="contact"
           onClick={() => setOpen(false)}
-          className="mt-auto flex w-full items-center justify-center gap-2 rounded-full border border-transparent bg-origin-border px-5 py-3.5 text-[13.5px] font-medium text-paper transition-opacity hover:opacity-85
-  [background-image:radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0)_70%),linear-gradient(rgba(255,255,255,0.08),rgba(255,255,255,0.08)),linear-gradient(#0a0a0c,#0a0a0c),linear-gradient(45deg,#004181_0%,rgba(255,255,255,0.2)_100%)]
-  [background-clip:padding-box,padding-box,padding-box,border-box]"
+          className="mt-auto w-full"
         >
           Get in Touch
-          <span aria-hidden="true">
-            <Image src="/arrow.svg" alt="arrow" height={18} width={18} />
-          </span>
-        </ScrollLink>
+        </GradientButton>
       </div>
     </header>
   );

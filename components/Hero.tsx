@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import GradientButton from "./ui/button";
 import ScrollLink from "@/components/ui/ScrollLink";
 
 export default function Hero() {
@@ -50,17 +50,13 @@ export default function Hero() {
           </p>
 
           <div className="mt-9 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-            <ScrollLink
+            <GradientButton
+              as={ScrollLink}
               to="research"
-              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full border border-transparent bg-origin-border px-5 text-[13.5px] font-medium text-paper transition-opacity hover:opacity-85 sm:w-auto
-              [background-image:radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0)_70%),linear-gradient(rgba(255,255,255,0.08),rgba(255,255,255,0.08)),linear-gradient(#0a0a0c,#0a0a0c),linear-gradient(45deg,#004181_0%,rgba(255,255,255,0.2)_100%)]
-              [background-clip:padding-box,padding-box,padding-box,border-box]"
+              className="w-full sm:w-auto"
             >
               Explore the research
-              <span aria-hidden="true">
-                <Image src={"/arrow.svg"} alt="arrow" height={18} width={18} />
-              </span>
-            </ScrollLink>
+            </GradientButton>
           </div>
         </div>
       </div>
