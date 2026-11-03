@@ -36,7 +36,7 @@ export default function GradientButton<T extends ElementType = "button">({
       {children}
       {showArrow && (
         <Image
-          src="/arrow.svg"
+          src="/icons/arrow.svg"
           alt=""
           width={16}
           height={16}

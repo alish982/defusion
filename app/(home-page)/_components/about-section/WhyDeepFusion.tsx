@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { PILLARS } from "@/Data/About";
+import { PILLARS } from "@/data/about";
 
 function PillarCard({
   title,
@@ -22,7 +22,7 @@ function PillarCard({
     >
       <div className="absolute inset-0">
         <Image
-          src="/fiber.png"
+          src="/images/fiber.png"
           alt="Woven texture"
           fill
           className="object-cover"

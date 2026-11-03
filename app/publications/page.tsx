@@ -3,10 +3,10 @@
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useLenis } from "lenis/react";
-import { publications } from "@/Data/Publications";
-import Container from "@/components/container";
-import PublicationCard from "./publicationCard";
-import Pagination from "@/utils/Pagination";
+import { publications } from "@/data/publications";
+import LayoutWrapper from "@/components/layouts/LayoutWrapper";
+import PublicationCard from "./PublicationCard";
+import Pagination from "@/components/ui/Pagination";
 
 const CATEGORIES = ["All", "Edge AI", "Speech and Voice", "Multimodal"];
 const ITEMS_PER_PAGE = 8;
@@ -84,7 +84,7 @@ export default function ProjectsPage() {
   };
 
   return (
-    <Container className="pt-16 xl:pt-24">
+    <LayoutWrapper className="pt-16 xl:pt-24">
       <main className="min-h-screen bg-[#0a0a0b] py-16 sm:px-10 md:px-2 ">
         <div ref={topRef}>
           <div className="flex items-center gap-3 py-4">
@@ -167,6 +167,6 @@ export default function ProjectsPage() {
           />
         </div>
       </main>
-    </Container>
+    </LayoutWrapper>
   );
 }

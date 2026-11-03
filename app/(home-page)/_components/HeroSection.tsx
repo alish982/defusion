@@ -1,9 +1,9 @@
 "use client";
 
-import GradientButton from "./ui/button";
+import GradientButton from "@/components/ui/Button";
 import ScrollLink from "@/components/ui/ScrollLink";
 
-export default function Hero() {
+export default function HeroSection() {
   return (
     <section
       id="top"

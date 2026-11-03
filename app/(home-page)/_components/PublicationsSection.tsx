@@ -1,10 +1,10 @@
 import Image from "next/image";
-import { PAPERS } from "@/Data/Project";
-import GradientButton from "./ui/button";
+import { PAPERS } from "@/data/project";
+import GradientButton from "@/components/ui/Button";
 import Link from "next/link";
-import PublicationCard from "@/app/publications/publicationCard";
+import PublicationCard from "@/app/publications/PublicationCard";
 
-export default function Projects() {
+export default function PublicationsSection() {
   return (
     <section id="research" className="py-8 lg:py-28">
       <div className="mx-auto">
@@ -54,7 +54,7 @@ export default function Projects() {
                 >
                   <div className="relative aspect-[4/3]">
                     <Image
-                      src="/image1.png"
+                      src="/images/image1.png"
                       alt=""
                       fill
                       className="object-cover"
@@ -71,7 +71,7 @@ export default function Projects() {
                     <div className="mt-4 inline-block text-[16px] text-[#5CAEFF] font-normal hover:opacity-80 border-b border-[#5CAEFF] pb-1.5">
                       Read the Paper{" "}
                       <Image
-                        src="/arrow.svg"
+                        src="/icons/arrow.svg"
                         alt="image"
                         width={20}
                         height={20}
