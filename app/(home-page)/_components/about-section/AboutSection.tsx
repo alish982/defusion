@@ -1,8 +1,8 @@
 import GsapIntro from "./GsapIntro";
 import ResearchDomains from "./ResearchDomain";
-import WhyDeepFusion from "./whyDeepFusioin";
+import WhyDeepFusion from "./WhyDeepFusion";
 
-export default function About() {
+export default function AboutSection() {
   return (
     <>
       <GsapIntro />

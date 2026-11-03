@@ -1,6 +1,6 @@
 "use client";
 
-import { COLUMNS, SOCIALS } from "@/Data/Footer";
+import { COLUMNS, SOCIALS } from "@/data/footer";
 import Image from "next/image";
 import ScrollLink from "@/components/ui/ScrollLink";
 import Link from "next/link";
@@ -76,7 +76,7 @@ export default function Footer() {
         </div>
         <div className="px-5 md:px-0 mt-10 flex justify-center">
           <Image
-            src="/logo.svg"
+            src="/icons/logo.svg"
             height={358}
             width={365}
             alt="DeepFusion AI Labs logo"
@@ -92,7 +92,7 @@ export default function Footer() {
             className="flex shrink-0 items-center"
           >
             <Image
-              src="/prixalogo.svg"
+              src="/icons/prixalogo.svg"
               alt="Prixa logo"
               width={100}
               height={28}

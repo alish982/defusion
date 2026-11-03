@@ -4,11 +4,11 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import ScrollLink from "@/components/ui/ScrollLink";
 import Link from "next/link";
-import NavLink from "./ui/Navlink";
-import { useHideOnScroll } from "./ui/smooth-scroll/Hideonscroll";
+import NavLink from "@/components/ui/NavLink";
+import { useHideOnScroll } from "@/components/smooth-scroll/HideOnScroll";
 import gsap from "gsap";
 import { useLenis } from "lenis/react";
-import GradientButton from "./ui/button";
+import GradientButton from "@/components/ui/Button";
 
 const LINKS = [
   { label: "Research", id: "research" },
@@ -59,7 +59,7 @@ export default function Navbar() {
       >
         <Link href={"/"} className="flex items-center gap-2 text-paper">
           <Image
-            src="/logo.svg"
+            src="/icons/logo.svg"
             height={36}
             width={36}
             alt="DeepFusion AI Labs logo"
@@ -120,7 +120,7 @@ export default function Navbar() {
               </svg>
             ) : (
               <Image
-                src="/hamburger.svg"
+                src="/icons/hamburger.svg"
                 alt=""
                 width={24}
                 height={24}

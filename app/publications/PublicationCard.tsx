@@ -15,7 +15,7 @@ export default function PublicationCard({
   tag,
   title,
   desc,
-  image = "/image1.png",
+  image = "/images/image1.png",
   imageAlt = "",
   accent,
 }: PublicationCardProps) {
@@ -36,7 +36,7 @@ export default function PublicationCard({
         <div className="mt-4 inline-block border-b border-[#5CAEFF] pb-1.5 text-[16px] font-normal text-[#5CAEFF] hover:opacity-80">
           Read the Paper{" "}
           <Image
-            src="/arrow.svg"
+            src="/icons/arrow.svg"
             alt=""
             width={20}
             height={20}

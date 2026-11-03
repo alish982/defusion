@@ -1,4 +1,4 @@
-export default function Container({
+export default function LayoutWrapper({
   children,
   className = "",
 }: {

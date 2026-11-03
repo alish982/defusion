@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { contactSchema, type ContactFormValues } from "@/utils/contactschema";
-import GradientButton from "./ui/button";
+import { contactSchema, type ContactFormValues } from "@/utils/contact-schema";
+import GradientButton from "@/components/ui/Button";
 
 type FieldErrors = Partial<Record<keyof ContactFormValues, string>>;
 
@@ -15,7 +15,7 @@ const emptyForm: ContactFormValues = {
   message: "",
 };
 
-export default function ContactUs() {
+export default function ContactUsSection() {
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
   >("idle");

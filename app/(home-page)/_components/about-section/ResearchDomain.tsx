@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { DOMAINS } from "@/Data/About";
+import { DOMAINS } from "@/data/about";
 import { useAutoLoading } from "./loading";
 
 const ITEM_DURATION = 4500;

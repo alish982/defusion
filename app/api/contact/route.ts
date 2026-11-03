@@ -1,5 +1,5 @@
 import { serverEnv } from "@/app/config/env";
-import { contactSchema } from "@/utils/contactschema";
+import { contactSchema } from "@/utils/contact-schema";
 import { resend } from "@/utils/resend";
 
 const escapeHtml = (str: string) =>

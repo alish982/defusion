@@ -26,10 +26,10 @@ const COLUMNS = [
 ];
 
 const SOCIALS = [
-  { label: "LinkedIn", href: "#", icon: "/linkdin.svg" },
-  { label: "X", href: "#", icon: "/x.svg" },
-  { label: "Facebook", href: "#", icon: "/facebook.svg" },
-  { label: "Instagram", href: "#", icon: "/instagram.svg" },
+  { label: "LinkedIn", href: "#", icon: "/icons/linkdin.svg" },
+  { label: "X", href: "#", icon: "/icons/x.svg" },
+  { label: "Facebook", href: "#", icon: "/icons/facebook.svg" },
+  { label: "Instagram", href: "#", icon: "/icons/instagram.svg" },
 ];
 
 export { COLUMNS, SOCIALS };
