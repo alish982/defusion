@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import GradientButton from "@/components/ui/Button";
+
 type PublicationCardProps = {
   date: string;
   tag: string;
@@ -8,6 +10,8 @@ type PublicationCardProps = {
   image?: string;
   imageAlt?: string;
   accent?: string;
+  readHref?: string;
+  citeHref?: string;
 };
 
 export default function PublicationCard({
@@ -18,13 +22,15 @@ export default function PublicationCard({
   image = "/images/image1.png",
   imageAlt = "",
   accent,
+  readHref = "#",
+  citeHref = "#",
 }: PublicationCardProps) {
   return (
-    <article className="overflow-hidden rounded-2xl border hairline bg-[#181818] ">
+    <article className="flex flex-col overflow-hidden rounded-2xl border hairline bg-[#181818]">
       <div className="relative aspect-[4/3]">
         <Image src={image} alt={imageAlt} fill className="object-cover" />
       </div>
-      <div className="p-5">
+      <div className="flex flex-1 flex-col p-5">
         <p className="text-[12px] uppercase tracking-wide text-muted-2">
           {tag}
           {"  "}- {date}
@@ -33,19 +39,23 @@ export default function PublicationCard({
           {title}
         </h3>
         {/* <p className="mt-2 line-clamp-2 text-[16px] text-muted-2">{desc}</p> */}
-        <div className="mt-4 inline-block border-b border-[#5CAEFF] pb-1.5 text-[16px] font-normal text-[#5CAEFF] hover:opacity-80">
-          Read the Paper{" "}
-          <Image
-            src="/icons/arrow.svg"
-            alt=""
-            width={20}
-            height={20}
-            className="inline-block"
-            style={{
-              filter:
-                "invert(48%) sepia(90%) saturate(1000%) hue-rotate(190deg)",
-            }}
-          />
+        <div className="mt-auto grid grid-cols-2 gap-[13px] pt-4">
+          <GradientButton
+            as="a"
+            variant="subtle"
+            href={readHref}
+            className="h-11! min-w-0 px-2!"
+          >
+            Read
+          </GradientButton>
+          <GradientButton
+            as="a"
+            variant="outline"
+            href={citeHref}
+            className="h-11! min-w-0 px-2!"
+          >
+            Cite
+          </GradientButton>
         </div>
       </div>
     </article>

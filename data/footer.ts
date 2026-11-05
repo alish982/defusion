@@ -1,35 +1,47 @@
-const COLUMNS = [
+type FooterLink = {
+  label: string;
+  href: string;
+  /** In-page section id, scrolled to smoothly via ScrollLink. */
+  section?: boolean;
+  external?: boolean;
+};
+
+type FooterColumn = {
+  title: string;
+  links: FooterLink[];
+};
+
+const COLUMNS: FooterColumn[] = [
   {
-    title: "Company",
+    title: 'Company',
     links: [
-      { label: "Research", href: "#research" },
-      { label: "Why DeepFusion", href: "#why" },
-      { label: "Research Domains", href: "#domains" },
+      { label: 'Research', href: 'research', section: true },
+      { label: 'Why Deepfusion', href: 'why', section: true },
+      { label: 'Research Domains', href: 'domains', section: true },
     ],
   },
   {
-    title: "Resources",
+    title: 'Contact',
     links: [
-      { label: "Research", href: "#research" },
-      { label: "Why DeepFusion", href: "#why" },
-      { label: "Research Domains", href: "#domains" },
+      { label: 'Sanepa, Lalitpur', href: 'https://maps.google.com/?q=Sanepa,Lalitpur', external: true },
+      { label: '+977-9700122624', href: 'tel:+9779700122624' },
+      { label: 'info@deepfusionlabs.com', href: 'mailto:info@deepfusionlabs.com' },
     ],
   },
   {
-    title: "Careers",
+    title: 'Socials',
     links: [
-      { label: "Open Roles", href: "#careers" },
-      { label: "Life at DeepFusion", href: "#careers" },
-      { label: "Internships", href: "#careers" },
+      { label: 'Twitter', href: '#', external: true },
+      { label: 'Linkedin', href: '#', external: true },
+      { label: 'Facebook', href: '#', external: true },
     ],
   },
 ];
 
-const SOCIALS = [
-  { label: "LinkedIn", href: "#", icon: "/icons/linkdin.svg" },
-  { label: "X", href: "#", icon: "/icons/x.svg" },
-  { label: "Facebook", href: "#", icon: "/icons/facebook.svg" },
-  { label: "Instagram", href: "#", icon: "/icons/instagram.svg" },
+const LEGAL: FooterLink[] = [
+  { label: 'Privacy Policy', href: '#' },
+  { label: 'Terms & Conditions', href: '#' },
 ];
 
-export { COLUMNS, SOCIALS };
+export { COLUMNS, LEGAL };
+export type { FooterLink, FooterColumn };

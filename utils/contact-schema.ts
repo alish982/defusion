@@ -1,5 +1,12 @@
 import { z } from "zod";
 
+export const MESSAGE_WORD_LIMIT = 200;
+export const MESSAGE_CHARACTER_LIMIT = 1200;
+
+export function getWords(text: string) {
+  return text.trim().split(/\s+/).filter(Boolean);
+}
+
 export const contactSchema = z.object({
   fullName: z
     .string()
@@ -10,17 +17,26 @@ export const contactSchema = z.object({
     .string()
     .trim()
     .min(1, "Email is required")
-    .email("Enter a valid email address"),
-  company: z.string().trim().max(100, "Company name is too long"),
+    .pipe(z.email("Enter a valid email address")),
   phone: z
     .string()
     .trim()
-    .min(1, "Phone number is required")
+    .min(1, "Mobile number is required")
+    .regex(/^\d{7,15}$/, "Mobile number must be 7 to 15 digits"),
+  organisation: z.string().trim().max(100, "Organisation name is too long"),
+  message: z
+    .string()
+    .trim()
+    .min(1, "Message is required")
+    .max(
+      MESSAGE_CHARACTER_LIMIT,
+      `Message must be under ${MESSAGE_CHARACTER_LIMIT} characters`,
+    )
     .refine(
-      (v) => /^\d{10}$/.test(v.replace(/[\s-]/g, "")),
-      "Phone number must be exactly 10 digits",
+      (value) => getWords(value).length <= MESSAGE_WORD_LIMIT,
+      `Message must be under ${MESSAGE_WORD_LIMIT} words`,
     ),
-  message: z.string().trim().max(2000, "Message must be under 2000 characters"),
+  consent: z.literal("on", { error: "Please accept to continue" }),
 });
 
 export type ContactFormValues = z.infer<typeof contactSchema>;

@@ -84,8 +84,8 @@ export default function ProjectsPage() {
   };
 
   return (
-    <LayoutWrapper className="pt-16 xl:pt-24">
-      <main className="min-h-screen bg-[#0a0a0b] py-16 sm:px-10 md:px-2 ">
+    <main className="min-h-screen bg-[#0a0a0b] pt-32 pb-16 xl:pt-40">
+      <LayoutWrapper>
         <div ref={topRef}>
           <div className="flex items-center gap-3 py-4">
             <span className="h-2 w-2 rotate-45 bg-blue-500" />
@@ -166,7 +166,7 @@ export default function ProjectsPage() {
             onPageChange={handlePageChange}
           />
         </div>
-      </main>
-    </LayoutWrapper>
+      </LayoutWrapper>
+    </main>
   );
 }
