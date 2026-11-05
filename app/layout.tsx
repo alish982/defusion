@@ -96,7 +96,23 @@ export const metadata: Metadata = {
   description:
     "DeepFusion AI Labs is Prixa Group's dedicated research engine, building certified, multimodal AI across language, vision, voice, and security.",
   icons: {
-    icon: '/icons/logo.svg',
+    icon: [
+      {
+        url: '/icons/favicon-light.svg',
+        type: 'image/svg+xml',
+        media: '(prefers-color-scheme: light)',
+      },
+      {
+        url: '/icons/favicon-dark.svg',
+        type: 'image/svg+xml',
+        media: '(prefers-color-scheme: dark)',
+      },
+    ],
+    apple: {
+      url: '/icons/apple-icon.png',
+      sizes: '180x180',
+      type: 'image/png',
+    },
   },
 };
 

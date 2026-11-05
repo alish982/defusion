@@ -1,24 +1,24 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import type { ChangeEvent, FormEvent, ReactNode } from "react";
-import Image from "next/image";
+import { useState } from 'react';
+import type { ChangeEvent, FormEvent, ReactNode } from 'react';
+import Image from 'next/image';
 
-import GradientButton from "@/components/ui/Button";
+import GradientButton from '@/components/ui/Button';
 import {
   MESSAGE_CHARACTER_LIMIT,
   MESSAGE_WORD_LIMIT,
   contactSchema,
   getWords,
   type ContactFormValues,
-} from "@/utils/contact-schema";
+} from '@/utils/contact-schema';
 
-const COUNTRY_CODE = "+977";
+const COUNTRY_CODE = '+977';
 
 type FieldErrors = Partial<Record<keyof ContactFormValues, string>>;
 
 const FIELD_CLASSES =
-  "rounded-lg border border-[rgba(154,159,166,0.1)] bg-white/8 text-[14px] text-white placeholder:text-[#444648] focus:border-[#5CAEFF]/50 focus:outline-none md:text-[16px]";
+  'rounded-lg border border-[rgba(154,159,166,0.1)] bg-white/8 text-[14px] text-white placeholder:text-[#444648] focus:border-[#5CAEFF]/50 focus:outline-none md:text-[16px]';
 const INPUT_CLASSES = `h-12 w-full px-[17px] ${FIELD_CLASSES}`;
 
 function FieldError({
@@ -58,20 +58,20 @@ function FieldLabel({
 }
 
 export default function ContactForm({ email }: { email: string }) {
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
   const [errors, setErrors] = useState<FieldErrors>({});
   const wordCount = getWords(message).length;
 
   const invalidProps = (name: keyof ContactFormValues) => ({
-    "aria-invalid": Boolean(errors[name]),
-    "aria-describedby": errors[name] ? `${name}-error` : undefined,
+    'aria-invalid': Boolean(errors[name]),
+    'aria-describedby': errors[name] ? `${name}-error` : undefined,
   });
 
   const handleMessageChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     const words = getWords(e.target.value);
     const withinWordLimit =
       words.length > MESSAGE_WORD_LIMIT
-        ? words.slice(0, MESSAGE_WORD_LIMIT).join(" ")
+        ? words.slice(0, MESSAGE_WORD_LIMIT).join(' ')
         : e.target.value;
     setMessage(withinWordLimit.slice(0, MESSAGE_CHARACTER_LIMIT));
   };
@@ -112,13 +112,13 @@ export default function ContactForm({ email }: { email: string }) {
       `Full Name: ${fullName}`,
       `Email: ${senderEmail}`,
       `Mobile Number: ${COUNTRY_CODE} ${phone}`,
-      `Organisation: ${organisation || "-"}`,
-      "",
+      `Organisation: ${organisation || '-'}`,
+      '',
       result.data.message,
-    ].join("\n");
+    ].join('\n');
 
     window.location.href = `mailto:${email}?subject=${encodeURIComponent(
-      "Contact enquiry",
+      'Contact enquiry',
     )}&body=${encodeURIComponent(body)}`;
   };
 
@@ -128,7 +128,7 @@ export default function ContactForm({ email }: { email: string }) {
       autoComplete="off"
       onSubmit={handleSubmit}
       onChange={clearFieldError}
-      className="flex min-w-0 flex-1 flex-col gap-8 md:gap-10"
+      className="flex min-w-0 flex-1 flex-col gap-8 md:gap-10 max-w-[768px]"
     >
       <div className="grid grid-cols-1 gap-x-4 gap-y-6 md:grid-cols-2">
         <div className="flex flex-col gap-4 md:gap-3">
@@ -142,7 +142,7 @@ export default function ContactForm({ email }: { email: string }) {
             required
             placeholder="Enter your full name"
             className={INPUT_CLASSES}
-            {...invalidProps("fullName")}
+            {...invalidProps('fullName')}
           />
           <FieldError name="fullName" message={errors.fullName} />
         </div>
@@ -158,7 +158,7 @@ export default function ContactForm({ email }: { email: string }) {
             required
             placeholder="example@gmail.com"
             className={INPUT_CLASSES}
-            {...invalidProps("email")}
+            {...invalidProps('email')}
           />
           <FieldError name="email" message={errors.email} />
         </div>
@@ -185,7 +185,7 @@ export default function ContactForm({ email }: { email: string }) {
               required
               inputMode="numeric"
               className="h-full min-w-0 flex-1 bg-transparent text-[14px] text-white focus:outline-none md:text-[16px]"
-              {...invalidProps("phone")}
+              {...invalidProps('phone')}
             />
           </div>
           <FieldError name="phone" message={errors.phone} />
@@ -201,7 +201,7 @@ export default function ContactForm({ email }: { email: string }) {
             type="text"
             placeholder="Enter your organisation"
             className={INPUT_CLASSES}
-            {...invalidProps("organisation")}
+            {...invalidProps('organisation')}
           />
           <FieldError name="organisation" message={errors.organisation} />
         </div>
@@ -219,7 +219,7 @@ export default function ContactForm({ email }: { email: string }) {
             maxLength={MESSAGE_CHARACTER_LIMIT}
             placeholder="Write something..."
             className={`h-[114px] w-full resize-none p-[17px] md:h-[137px] ${FIELD_CLASSES}`}
-            {...invalidProps("message")}
+            {...invalidProps('message')}
           />
           <p
             id="message-count"
@@ -239,7 +239,7 @@ export default function ContactForm({ email }: { email: string }) {
                 type="checkbox"
                 required
                 className="peer absolute inset-0 cursor-pointer appearance-none rounded-[2px] border border-[#374151] checked:border-[#5CAEFF] checked:bg-[#5CAEFF] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5CAEFF]"
-                {...invalidProps("consent")}
+                {...invalidProps('consent')}
               />
               <svg
                 viewBox="0 0 18 18"

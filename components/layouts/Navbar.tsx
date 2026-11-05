@@ -78,7 +78,6 @@ export default function Navbar() {
   return (
     <header ref={barRef} className="fixed inset-x-0 top-0 z-50">
       <div
-        data-lenis-prevent
         className={`transition-colors duration-300 ${
           scrolled || open ? 'bg-black' : 'bg-transparent'
         }`}
@@ -90,8 +89,8 @@ export default function Navbar() {
               <Link href={'/'} className="block w-fit">
                 <Image
                   src="/icons/logo-horizontal.svg"
-                  height={48}
-                  width={191}
+                  width={161.667}
+                  height={40.689}
                   alt="DeepFusion AI Labs logo"
                 />
               </Link>

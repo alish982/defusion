@@ -42,12 +42,12 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-14">
+          <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
             <ContactForm email={EMAIL} />
 
             <aside className="flex flex-col gap-[18px] lg:w-[358px] lg:shrink-0 lg:gap-3">
               <div
-                className={`${CARD_CLASSES} p-[17px] [background-image:radial-gradient(111.7%_409%_at_13.3%_2.7%,rgba(255,255,255,0.12)_19.33%,rgba(255,255,255,0.106)_28.46%,rgba(255,255,255,0)_100%)]`}
+                className={`${CARD_CLASSES} p-[16px] [background-image:radial-gradient(111.7%_409%_at_13.3%_2.7%,rgba(255,255,255,0.12)_19.33%,rgba(255,255,255,0.106)_28.46%,rgba(255,255,255,0)_100%)]`}
               >
                 <Image
                   src="/icons/logo-horizontal.svg"
