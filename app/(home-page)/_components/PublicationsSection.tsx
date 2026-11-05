@@ -3,6 +3,8 @@ import { PAPERS } from '@/data/project';
 import GradientButton from '@/components/ui/Button';
 import Link from 'next/link';
 import PublicationCard from '@/app/publications/PublicationCard';
+import CiteButton from '@/app/publications/CiteButton';
+import { formatBibtex } from '@/utils/bibtex';
 import LayoutWrapper from '@/components/layouts/LayoutWrapper';
 
 export default function PublicationsSection() {
@@ -40,6 +42,7 @@ export default function PublicationsSection() {
               title={p.title}
               desc={p.desc}
               readHref={p.href}
+              citation={p.citation}
             />
           ))}
         </div>
@@ -77,14 +80,13 @@ export default function PublicationsSection() {
                     >
                       Read
                     </GradientButton>
-                    <GradientButton
-                      as="a"
-                      variant="outline"
-                      href="#"
-                      className="h-11! min-w-0 px-2!"
-                    >
-                      Cite
-                    </GradientButton>
+                    <CiteButton
+                      bibtex={formatBibtex({
+                        title: p.title,
+                        date: p.date,
+                        citation: p.citation,
+                      })}
+                    />
                   </div>
                 </div>
               </article>

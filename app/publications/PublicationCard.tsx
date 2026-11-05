@@ -1,6 +1,9 @@
 import Image from "next/image";
 
 import GradientButton from "@/components/ui/Button";
+import { formatBibtex, type Citation } from "@/utils/bibtex";
+
+import CiteButton from "./CiteButton";
 
 type PublicationCardProps = {
   date: string;
@@ -11,7 +14,7 @@ type PublicationCardProps = {
   imageAlt?: string;
   accent?: string;
   readHref?: string;
-  citeHref?: string;
+  citation: Citation;
 };
 
 export default function PublicationCard({
@@ -23,7 +26,7 @@ export default function PublicationCard({
   imageAlt = "",
   accent,
   readHref = "#",
-  citeHref = "#",
+  citation,
 }: PublicationCardProps) {
   return (
     <article className="flex flex-col overflow-hidden rounded-2xl border hairline bg-[#181818]">
@@ -48,14 +51,7 @@ export default function PublicationCard({
           >
             Read
           </GradientButton>
-          <GradientButton
-            as="a"
-            variant="outline"
-            href={citeHref}
-            className="h-11! min-w-0 px-2!"
-          >
-            Cite
-          </GradientButton>
+          <CiteButton bibtex={formatBibtex({ title, date, citation })} />
         </div>
       </div>
     </article>

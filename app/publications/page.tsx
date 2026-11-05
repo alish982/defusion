@@ -150,6 +150,7 @@ export default function ProjectsPage() {
                     title={pub.title}
                     desc={pub.summary}
                     accent={pub.accent}
+                    citation={pub.citation}
                   />
                 ))}
           </div>
