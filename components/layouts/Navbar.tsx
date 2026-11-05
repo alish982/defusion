@@ -6,7 +6,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 
 import gsap from 'gsap';
 
-import NavLink from '@/components/ui/NavLink';
+import ScrollLink from '@/components/ui/ScrollLink';
 import GradientButton from '@/components/ui/Button';
 import LayoutWrapper from '@/components/layouts/LayoutWrapper';
 
@@ -34,9 +34,9 @@ function NavItemLink({
   }
 
   return (
-    <NavLink to={link.id} className={className} onClick={onClick}>
+    <ScrollLink to={link.id} className={className} onClick={onClick}>
       {link.label}
-    </NavLink>
+    </ScrollLink>
   );
 }
 

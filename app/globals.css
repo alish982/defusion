@@ -37,6 +37,11 @@
   }
 }
 
+/* Keeps section links clear of the navbar, for both Lenis and browser anchors. */
+html {
+  scroll-padding-top: 88px;
+}
+
 body {
   background: var(--color-ink);
   color: var(--color-paper);

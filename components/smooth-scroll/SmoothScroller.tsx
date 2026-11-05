@@ -4,6 +4,8 @@ import { ReactNode, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { ReactLenis, useLenis } from "lenis/react";
 
+import { scrollToSection } from "./scroll-to-section";
+
 type SmoothScrollerProps = {
   children: ReactNode;
 };
@@ -24,6 +26,10 @@ export default function SmoothScroller({
 
     // Recalculate page dimensions
     lenis.resize();
+
+    // Arriving at a section link such as /#research
+    const sectionId = window.location.hash.slice(1);
+    if (sectionId) scrollToSection(lenis, sectionId);
   }, [pathname, lenis]);
 
   return (
