@@ -4,6 +4,8 @@ import { useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+import LayoutWrapper from "@/components/layouts/LayoutWrapper";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const TEXT =
@@ -43,7 +45,7 @@ export default function GsapIntro() {
 
   return (
     <section className="py-10 lg:py-28">
-      <div className="">
+      <LayoutWrapper>
         <p
           ref={containerRef}
           className="text-center font-creato font-normal leading-[1.1] text-[1.5rem] md:text-[3.25rem]"
@@ -54,7 +56,7 @@ export default function GsapIntro() {
             </span>
           ))}
         </p>
-      </div>
+      </LayoutWrapper>
     </section>
   );
 }

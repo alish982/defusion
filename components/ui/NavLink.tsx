@@ -26,7 +26,7 @@ export default function NavLink({
         to={to}
         smooth
         duration={500}
-        offset={-80}
+        offset={-88}
         className={className}
         onClick={onClick}
       >

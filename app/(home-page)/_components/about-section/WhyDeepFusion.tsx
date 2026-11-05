@@ -68,7 +68,7 @@ export default function WhyDeepFusion() {
 
       {/* Mobile: swipeable slider — now persists through the problem zone */}
       <div className="mt-12 min-[822px]:hidden">
-        <div className="flex snap-x snap-mandatory overflow-x-auto pb-4 px-6 -mx-6 scrollbar-hide">
+        <div className="flex snap-x snap-mandatory overflow-x-auto pb-4 px-4 -mx-4 md:px-8 md:-mx-8 scrollbar-hide">
           {PILLARS.map((p) => (
             <PillarCard
               key={p.title}

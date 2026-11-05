@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { DOMAINS } from "@/data/about";
+import LayoutWrapper from "@/components/layouts/LayoutWrapper";
 import { useAutoLoading } from "./loading";
 
 const ITEM_DURATION = 4500;
@@ -14,7 +15,7 @@ export default function ResearchDomains() {
 
   return (
     <section id="domains" className="py-8">
-      <div className="">
+      <LayoutWrapper>
         <div className="text-center mb-6 md:mb-0">
           <div className="flex items-center justify-center gap-4">
             <span className="h-2 w-2 rotate-45 bg-blue-500" />
@@ -128,7 +129,7 @@ export default function ResearchDomains() {
             </div>
           </div>
         </div>
-      </div>
+      </LayoutWrapper>
     </section>
   );
 }

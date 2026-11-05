@@ -1,13 +1,11 @@
-export default function LayoutWrapper({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
+import type { ReactNode } from 'react';
+
+type LayoutWrapperProps = {
+  children: ReactNode;
+};
+
+export default function LayoutWrapper({ children }: LayoutWrapperProps) {
   return (
-    <div className={`mx-auto max-w-[1800px] px-6 md:px-12 lg:px-24 xl:px-40 ${className}`}>
-      {children}
-    </div>
+    <div className="max-w-[1400px] px-4 md:px-8 xl:mx-auto">{children}</div>
   );
 }
