@@ -125,6 +125,7 @@ export default function ContactForm({ email }: { email: string }) {
   return (
     <form
       noValidate
+      autoComplete="off"
       onSubmit={handleSubmit}
       onChange={clearFieldError}
       className="flex min-w-0 flex-1 flex-col gap-8 md:gap-10"
@@ -139,7 +140,6 @@ export default function ContactForm({ email }: { email: string }) {
             name="fullName"
             type="text"
             required
-            autoComplete="name"
             placeholder="Enter your full name"
             className={INPUT_CLASSES}
             {...invalidProps("fullName")}
@@ -156,7 +156,6 @@ export default function ContactForm({ email }: { email: string }) {
             name="email"
             type="email"
             required
-            autoComplete="email"
             placeholder="example@gmail.com"
             className={INPUT_CLASSES}
             {...invalidProps("email")}
@@ -184,7 +183,6 @@ export default function ContactForm({ email }: { email: string }) {
               name="phone"
               type="tel"
               required
-              autoComplete="tel-national"
               inputMode="numeric"
               className="h-full min-w-0 flex-1 bg-transparent text-[14px] text-white focus:outline-none md:text-[16px]"
               {...invalidProps("phone")}
@@ -201,7 +199,6 @@ export default function ContactForm({ email }: { email: string }) {
             id="organisation"
             name="organisation"
             type="text"
-            autoComplete="organization"
             placeholder="Enter your organisation"
             className={INPUT_CLASSES}
             {...invalidProps("organisation")}
