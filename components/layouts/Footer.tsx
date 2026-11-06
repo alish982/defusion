@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import ScrollLink from '@/components/ui/ScrollLink';
 
@@ -20,6 +21,14 @@ function FooterAnchor({
       <ScrollLink to={link.href} className={className}>
         {link.label}
       </ScrollLink>
+    );
+  }
+
+  if (link.href.startsWith('/')) {
+    return (
+      <Link href={link.href} className={className}>
+        {link.label}
+      </Link>
     );
   }
 
