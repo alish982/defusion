@@ -10,6 +10,7 @@ import {
   MESSAGE_WORD_LIMIT,
   contactSchema,
   getWords,
+  limitMessage,
   type ContactFormValues,
 } from '@/utils/contact-schema';
 
@@ -68,12 +69,7 @@ export default function ContactForm({ email }: { email: string }) {
   });
 
   const handleMessageChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    const words = getWords(e.target.value);
-    const withinWordLimit =
-      words.length > MESSAGE_WORD_LIMIT
-        ? words.slice(0, MESSAGE_WORD_LIMIT).join(' ')
-        : e.target.value;
-    setMessage(withinWordLimit.slice(0, MESSAGE_CHARACTER_LIMIT));
+    setMessage(limitMessage(e.target.value));
   };
 
   const clearFieldError = (e: FormEvent<HTMLFormElement>) => {
@@ -225,8 +221,7 @@ export default function ContactForm({ email }: { email: string }) {
             id="message-count"
             className="text-right text-[12px] leading-none text-white/50 md:text-[14px]"
           >
-            {wordCount}/{MESSAGE_WORD_LIMIT} words · {message.length}/
-            {MESSAGE_CHARACTER_LIMIT} characters
+            {wordCount}/{MESSAGE_WORD_LIMIT} words
           </p>
           <FieldError name="message" message={errors.message} />
         </div>

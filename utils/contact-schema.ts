@@ -7,6 +7,17 @@ export function getWords(text: string) {
   return text.trim().split(/\s+/).filter(Boolean);
 }
 
+/** Trims typed or pasted text down to the message word and character limits. */
+export function limitMessage(text: string) {
+  const words = getWords(text);
+  const withinWordLimit =
+    words.length > MESSAGE_WORD_LIMIT
+      ? words.slice(0, MESSAGE_WORD_LIMIT).join(" ")
+      : text;
+
+  return withinWordLimit.slice(0, MESSAGE_CHARACTER_LIMIT);
+}
+
 export const contactSchema = z.object({
   fullName: z
     .string()

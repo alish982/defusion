@@ -92,7 +92,7 @@ const creatoDisplay = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'DEEPFUSION AI Labs — Frontier Intelligence. Global Scale.',
+  title: 'DEEPFUSION AI Labs | Frontier Intelligence. Global Scale.',
   description:
     "DeepFusion AI Labs is Prixa Group's dedicated research engine, building certified, multimodal AI across language, vision, voice, and security.",
   icons: {
