@@ -39,8 +39,8 @@ const COLUMNS: FooterColumn[] = [
 ];
 
 const LEGAL: FooterLink[] = [
-  { label: 'Terms & Conditions', href: '#' },
-  { label: 'Privacy Policy', href: '#' },
+  { label: 'Terms & Conditions', href: '/terms-and-conditions' },
+  { label: 'Privacy Policy', href: '/privacy-policy' },
 ];
 
 const PRIXA_URL = 'https://prixa.org';
