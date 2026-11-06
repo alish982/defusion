@@ -50,6 +50,11 @@ body {
     "cv05" 1;
 }
 
+/* The root layout always renders the footer, so a page opts out with this attribute. */
+body:has([data-hide-footer]) footer {
+  display: none;
+}
+
 ::selection {
   background: var(--color-accent);
   color: var(--color-ink);

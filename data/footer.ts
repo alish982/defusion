@@ -39,9 +39,11 @@ const COLUMNS: FooterColumn[] = [
 ];
 
 const LEGAL: FooterLink[] = [
-  { label: 'Privacy Policy', href: '#' },
   { label: 'Terms & Conditions', href: '#' },
+  { label: 'Privacy Policy', href: '#' },
 ];
 
-export { COLUMNS, LEGAL };
+const PRIXA_URL = 'https://prixa.org';
+
+export { COLUMNS, LEGAL, PRIXA_URL };
 export type { FooterLink, FooterColumn };

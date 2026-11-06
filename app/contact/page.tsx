@@ -7,7 +7,7 @@ import { GRADIENT_BORDER_CLASSES } from '@/components/ui/Button';
 import ContactForm from './ContactForm';
 
 export const metadata: Metadata = {
-  title: 'Contact Us — DEEPFUSION AI Labs',
+  title: 'Contact Us | DEEPFUSION AI Labs',
   description:
     'Research collaborations, partnerships, press. Fill out the form and we will reply within two days.',
 };
