@@ -33,7 +33,7 @@ export default function PublicationsSection() {
         <div className="mt-12 hidden gap-4 sm:grid sm:grid-cols-2 lg:grid-cols-3">
           {PAPERS.map((p) => (
             <PublicationCard
-              key={p.href}
+              key={p.citation.key}
               date={p.date}
               tag={p.tag}
               title={p.title}
@@ -48,9 +48,11 @@ export default function PublicationsSection() {
         <div className="mt-8 sm:hidden">
           <div className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 scrollbar-hide">
             {PAPERS.map((p) => (
-              <div className="w-[85%] shrink-0 snap-center [&>*]:h-full">
+              <div
+                key={p.citation.key}
+                className="w-[85%] shrink-0 snap-center [&>*]:h-full"
+              >
                 <PublicationCard
-                  key={p.href}
                   date={p.date}
                   tag={p.tag}
                   title={p.title}
