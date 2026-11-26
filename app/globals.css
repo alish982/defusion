@@ -37,6 +37,26 @@
   }
 }
 
+@utility prose-body {
+  @apply text-[15px] leading-[150%] text-[#FFFFFFA3];
+
+  @variant md {
+    @apply text-[16px];
+  }
+}
+
+@utility meta-text {
+  @apply text-[14px] leading-[100%] text-[#838383];
+}
+
+@utility blog-heading {
+  @apply font-creato text-[24px] leading-[1.1];
+
+  @variant md {
+    @apply text-[28px];
+  }
+}
+
 /* Keeps section links clear of the navbar, for both Lenis and browser anchors. */
 html {
   scroll-padding-top: 88px;
