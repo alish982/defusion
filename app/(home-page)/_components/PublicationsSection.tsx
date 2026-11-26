@@ -1,11 +1,8 @@
-import Image from 'next/image';
-import { PAPERS } from '@/data/project';
-import GradientButton from '@/components/ui/Button';
-import Link from 'next/link';
-import PublicationCard from '@/app/publications/PublicationCard';
-import CiteButton from '@/app/publications/CiteButton';
-import { formatBibtex } from '@/utils/bibtex';
-import LayoutWrapper from '@/components/layouts/LayoutWrapper';
+import { PAPERS } from "@/data/project";
+import GradientButton from "@/components/ui/Button";
+import Link from "next/link";
+import PublicationCard from "@/app/publications/PublicationCard";
+import LayoutWrapper from "@/components/layouts/LayoutWrapper";
 
 export default function PublicationsSection() {
   return (
@@ -33,11 +30,11 @@ export default function PublicationsSection() {
         </div>
 
         {/* Desktop / tablet: grid */}
-        <div className="mt-12 hidden gap-6 sm:grid sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 hidden gap-4 sm:grid sm:grid-cols-2 lg:grid-cols-3">
           {PAPERS.map((p) => (
             <PublicationCard
+              key={p.href}
               date={p.date}
-              key={p.title}
               tag={p.tag}
               title={p.title}
               desc={p.desc}
@@ -47,49 +44,21 @@ export default function PublicationsSection() {
           ))}
         </div>
 
-        {/* Mobile: swipeable slider*/}
+        {/* Mobile: swipeable slider */}
         <div className="mt-8 sm:hidden">
-          <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 -mx-4 scrollbar-hide">
+          <div className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 scrollbar-hide">
             {PAPERS.map((p) => (
-              <article
-                key={p.title}
-                className="flex flex-col overflow-hidden rounded-2xl border hairline bg-surface w-[85%] shrink-0 snap-center"
-              >
-                <div className="relative aspect-[4/3]">
-                  <Image
-                    src="/images/image1.png"
-                    alt=""
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="flex flex-1 flex-col p-5 bg-[#181818]">
-                  <p className="text-[12px] uppercase tracking-wide text-muted-2">
-                    {p.tag}
-                  </p>
-                  <h3 className="mt-3 text-[18px] font-medium font-creato leading-snug">
-                    {p.title}
-                  </h3>
-                  <p className="mt-2 text-[16px] text-muted-2">{p.desc}</p>
-                  <div className="mt-auto grid grid-cols-2 gap-[13px] pt-4">
-                    <GradientButton
-                      as="a"
-                      variant="subtle"
-                      href={p.href}
-                      className="h-11! min-w-0 px-2!"
-                    >
-                      Read
-                    </GradientButton>
-                    <CiteButton
-                      bibtex={formatBibtex({
-                        title: p.title,
-                        date: p.date,
-                        citation: p.citation,
-                      })}
-                    />
-                  </div>
-                </div>
-              </article>
+              <div className="w-[85%] shrink-0 snap-center [&>*]:h-full">
+                <PublicationCard
+                  key={p.href}
+                  date={p.date}
+                  tag={p.tag}
+                  title={p.title}
+                  desc={p.desc}
+                  readHref={p.href}
+                  citation={p.citation}
+                />
+              </div>
             ))}
           </div>
         </div>

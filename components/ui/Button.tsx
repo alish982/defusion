@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { ComponentPropsWithoutRef, ElementType } from "react";
+import ArrowIcon from "../icons/ArrowIcon";
 
 const BASE_CLASSES = `
   relative inline-flex items-center justify-center rounded-full px-5 cursor-pointer
@@ -61,13 +62,14 @@ export default function GradientButton<T extends ElementType = "button">({
     >
       {children}
       {showArrow && (
-        <Image
-          src="/icons/arrow.svg"
-          alt=""
-          width={16}
-          height={16}
-          aria-hidden="true"
-        />
+        // <Image
+        //   src="/icons/arrow.svg"
+        //   alt=""
+        //   width={16}
+        //   height={16}
+        //   aria-hidden="true"
+        // />
+        <ArrowIcon className="text-white"/>
       )}
     </Component>
   );

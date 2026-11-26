@@ -16,7 +16,7 @@ export default function ProjectsPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
-  const [displayPage, setDisplayPage] = useState(1); 
+  const [displayPage, setDisplayPage] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const topRef = useRef<HTMLDivElement>(null);
   const isFirstRender = useRef(true);
@@ -120,7 +120,7 @@ export default function ProjectsPage() {
           </div>
 
           <div
-            className="grid grid-cols-1 gap-6 transition-all ease-out sm:grid-cols-2 lg:grid-cols-4"
+            className="grid grid-cols-1 gap-6 transition-all ease-out sm:grid-cols-2 lg:grid-cols-3"
             style={{
               transitionDuration: `${TRANSITION_MS}ms`,
               opacity: isTransitioning ? 0 : 1,
@@ -144,6 +144,7 @@ export default function ProjectsPage() {
                 ))
               : paginatedPublications.map((pub) => (
                   <PublicationCard
+                    readHref={`/publications/${pub.slug}`}
                     key={pub.slug}
                     date={pub.date}
                     tag={pub.category}

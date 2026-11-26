@@ -76,7 +76,11 @@ export default function Navbar() {
   }, [open]);
 
   return (
-    <header ref={barRef} className="fixed inset-x-0 top-0 z-50">
+    <header
+      id="site-header"
+      ref={barRef}
+      className="fixed inset-x-0 top-0 z-50"
+    >
       <div
         className={`transition-colors duration-300 ${
           scrolled || open ? 'bg-black' : 'bg-transparent'

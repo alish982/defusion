@@ -1,5 +1,8 @@
 import type { Citation } from "@/utils/bibtex";
 
+const SAMPLE_SECTION_COPY =
+  "Real-time speech recognition has become table stakes for modern voice interfaces — but for low-resource languages like Nepali, streaming ASR remains a largely unsolved problem. Most published Nepali ASR work focuses on offline, full-utterance transcription, where the model can see the entire audio clip before producing a transcript.";
+
 export type Publication = {
   slug: string;
   date: string;
@@ -8,6 +11,13 @@ export type Publication = {
   summary: string;
   accent: string;
   citation: Citation;
+  sections?: PublicationSection[];
+};
+
+export type PublicationSection = {
+  id: string;
+  title: string;
+  paragraphs: string[];
 };
 
 export const publications: Publication[] = [
@@ -18,6 +28,30 @@ export const publications: Publication[] = [
     title: "Streaming Nepali Speech Recognition with Cache-Aware Conformers",
     summary: "A low-latency ASR architecture tuned for low-resource languages.",
     accent: "linear-gradient(135deg, #2b2f38 0%, #4a5568 60%, #1a1d23 100%)",
+    sections: [
+      {
+        id: "introduction",
+        title: "Introduction",
+        paragraphs: [
+          "Real-time speech recognition has become table stakes for modern voice interfaces — but for low-resource languages like Nepali, streaming ASR remains a largely unsolved problem. Most published Nepali ASR work focuses on offline, full-utterance transcription, where the model can see the entire audio clip before producing a transcript.",
+        ],
+      },
+      {
+        id: "why-cache-aware-conformers",
+        title: "Why cache-aware Conformers",
+        paragraphs: [SAMPLE_SECTION_COPY, SAMPLE_SECTION_COPY],
+      },
+      {
+        id: "architecture-overview",
+        title: "Architecture overview",
+        paragraphs: [SAMPLE_SECTION_COPY, SAMPLE_SECTION_COPY],
+      },
+      {
+        id: "data-and-training-setup",
+        title: "Data and training setup",
+        paragraphs: [SAMPLE_SECTION_COPY, SAMPLE_SECTION_COPY],
+      },
+    ],
     citation: {
       key: "deepfusion_streaming_nepali_asr",
       authors: "[Author names]",
@@ -142,3 +176,7 @@ export const publications: Publication[] = [
     },
   },
 ];
+
+export function getPublicationBySlug(slug: string) {
+  return publications.find((publication) => publication.slug === slug);
+}

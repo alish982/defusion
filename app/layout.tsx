@@ -122,7 +122,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${creatoDisplay.variable}`}>
       <SmoothScroller>
-        <body className="antialiased bg-ink text-paper font-sans">
+        <body
+          className="antialiased bg-ink text-paper font-sans"
+          suppressHydrationWarning
+        >
           <Navbar />
           {children}
           <Footer />
