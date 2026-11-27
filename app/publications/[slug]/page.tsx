@@ -48,14 +48,14 @@ export default async function PublicationPage({
           </h1>
         </div>
 
-     <div className="relative mx-auto mt-8 aspect-[16/10] w-full max-w-[840px] overflow-hidden rounded-lg sm:aspect-[2/1] md:mt-12 md:rounded-lg">
-  <Image
-    alt={publication.title}
-    src="/images/image1.png"
-    fill
-    className="object-cover"
-  />
-</div>
+        <div className="relative mx-auto mt-8 aspect-[16/10] w-full max-w-[840px] overflow-hidden rounded-lg sm:aspect-[2/1] md:mt-12 md:rounded-lg">
+          <Image
+            alt={publication.title}
+            src="/images/image1.png"
+            fill
+            className="object-cover"
+          />
+        </div>
 
         <LayoutWrapper>
           {publication.sections && publication.sections.length > 0 ? (

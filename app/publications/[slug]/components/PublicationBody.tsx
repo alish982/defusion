@@ -1,8 +1,9 @@
 "use client";
 
-import { useRef } from "react";
+import { useMemo, useRef } from "react";
 import type { PublicationSection } from "@/data/publications";
 import TableOfContents, { type TocItem } from "./TableOfContents";
+import { calculateReadTime } from "@/utils/get-calculate-time";
 
 const INTRO =
   "Real-time speech recognition has become table stakes for modern voice interfaces — but for low-resource languages like Nepali, streaming ASR remains a largely unsolved problem. Most published Nepali ASR work focuses on offline, full-utterance transcription, where the model can see the entire audio clip before producing a transcript.";
@@ -15,14 +16,27 @@ export default function PublicationBody({
   const articleRef = useRef<HTMLDivElement>(null);
   const items: TocItem[] = sections.map(({ id, title }) => ({ id, title }));
 
+  const readTimeMinutes = useMemo(() => {
+    const html = [
+      `<p>${INTRO}</p>`,
+      `<p>${INTRO}</p>`,
+      ...sections.flatMap((section) => [
+        `<h2>${section.title}</h2>`,
+        ...section.paragraphs.map((text) => `<p>${text}</p>`),
+      ]),
+    ].join("\n");
+
+    return calculateReadTime(html);
+  }, [sections]);
+
   return (
     <div className="flex w-full flex-col items-stretch gap-8 lg:flex-row lg:items-start lg:justify-center lg:gap-10 xl:gap-[86px]">
       <TableOfContents items={items} articleRef={articleRef} />
 
       <div className="order-first flex flex-row flex-wrap items-center gap-x-5 gap-y-2 lg:order-last lg:flex-col lg:items-start lg:gap-5 lg:shrink-0">
         <p className="meta-text">Nov 16, 2026</p>
-        <p className="meta-text">11 min read</p>
-        <p className="meta-text">Share</p>
+        <p className="meta-text">{readTimeMinutes} min read</p>
+        <p className="meta-text cursor-pointer" >Share</p>
       </div>
 
       <div
